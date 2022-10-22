@@ -5,7 +5,7 @@ SHORT VERSION: I'm a family-oriented cybersecurity enthusiast, Christian, Vetera
 LONG VERSION:
 For the past 15 years, I've lived in Hawaii with my two rambunctious boys and fun loving husband. Before Hawaii, my husband and I were prior active duty Air Force, and both grew up in military households traveling and bouncing from school to school.
 
-I'm currently a computer systems engineer for a small rural private school, where I do a wide variety of cybersecurity, networking, programming, tech support, lniux admin, and systems administration tasks. I'm also an online part-time lecturer. 
+I'm currently a computer systems engineer for a small rural private school, where I do a wide variety of cybersecurity, networking, programming, linux administration, tech support, and systems administration tasks. I'm also an online part-time lecturer. 
 
 My past roles include tech support, tech business owner, web application penetration tester, web design, network admin, Sunday school teacher, Cyberpatriots coach, robotics and coding MS and HS afterschool teacher. 
 
