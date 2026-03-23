@@ -1,3 +1,38 @@
+
+
+<section class="hero">
+  <h1>Hi, I'm Priscilla</h1>
+  <p>Security leader. Builder. Problem solver.</p>
+</section>
+
+<section class="projects">
+  <h2>What I Do</h2>
+
+  <div class="card">
+    <h3>Cloud Security</h3>
+    <p>AWS, Azure, identity, and zero trust.</p>
+  </div>
+
+  <div class="card">
+    <h3>Risk & Compliance</h3>
+    <p>SOC 2, HIPAA, NIST, vendor risk.</p>
+  </div>
+
+  <div class="card">
+    <h3>Security Leadership</h3>
+    <p>Building teams and scaling programs.</p>
+  </div>
+</section>
+
+<section class="blog-preview">
+  <h2>Latest Writing</h2>
+
+  {% for post in site.posts limit:3 %}
+    <div class="post-preview">
+      <a href="{{ post.url }}">{{ post.title }}</a>
+    </div>
+  {% endfor %}
+</section>
 **>>  cat aboutme.txt  <<<**
 
 SHORT VERSION: I'm a family-oriented cybersecurity enthusiast, Christian, Veteran, Military BRAT, and Spanish speaking Cuban-Mexican American sharing my cybersec learning journey.
