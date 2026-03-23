@@ -1,8 +1,45 @@
 
 
-<section class="hero">
-  <h1>Hi, I'm Priscilla</h1>
-  <p>Security leader. Builder. Problem solver.</p>
+<section class="hero container">
+  <h1>
+    I build and scale security programs that hold up under real pressure.
+  </h1>
+
+  <p>
+    Director-level security leadership across cloud, risk, and compliance.
+    I turn fragmented controls into systems that pass audits, reduce risk, and scale with the business.
+  </p>
+</section>
+
+<section class="section container">
+  <h2>Selected Work</h2>
+
+  <div class="card">
+    <h3>Enterprise Security Program Buildout</h3>
+    <p>
+      Built a full security program from the ground up across AWS and Azure.
+      Implemented IAM, vulnerability management, and vendor risk processes.
+    </p>
+    <p><strong>Impact:</strong> Achieved SOC 2 with zero findings.</p>
+  </div>
+
+  <div class="card">
+    <h3>Identity & Access Modernization</h3>
+    <p>
+      Led RBAC and least privilege implementation across cloud and SaaS systems.
+      Integrated MFA and lifecycle automation.
+    </p>
+    <p><strong>Impact:</strong> Reduced unauthorized access risk significantly.</p>
+  </div>
+
+  <div class="card">
+    <h3>Third-Party Risk Program</h3>
+    <p>
+      Designed and operationalized vendor risk assessments and BAA tracking.
+    </p>
+    <p><strong>Impact:</strong> Closed compliance gaps and improved audit readiness.</p>
+  </div>
+
 </section>
 
 <section class="projects">
@@ -22,6 +59,15 @@
     <h3>Security Leadership</h3>
     <p>Building teams and scaling programs.</p>
   </div>
+</section>
+<section class="section container">
+  <h2>Writing</h2>
+
+  {% for post in site.posts limit:3 %}
+    <div class="card">
+      <a href="{{ post.url }}">{{ post.title }}</a>
+    </div>
+  {% endfor %}
 </section>
 
 <section class="blog-preview">
