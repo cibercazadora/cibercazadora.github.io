@@ -1,0 +1,51 @@
+body {
+  margin: auto;
+}
+
+.header {
+  padding: 1rem 0;
+}
+
+.logo {
+  margin: 0;
+}
+
+.nav ul {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+}
+
+.nav a {
+  color: #e2e8f0;
+  text-decoration: none;
+}
+
+.hero {
+  text-align: center;
+  padding: 4rem 1rem;
+}
+
+.content {
+  padding: 2rem 1rem;
+}
+
+.post-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.post-card {
+  display: block;
+  padding: 1rem;
+  background: #1e293b;
+  border-radius: 8px;
+  text-decoration: none;
+  color: white;
+}
+
+.footer {
+  text-align: center;
+  padding: 2rem 0;
+}
