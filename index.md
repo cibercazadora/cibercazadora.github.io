@@ -11,42 +11,7 @@
   </p>
 </section>
 
-<section class="section container">
-  <h2>Selected Work</h2>
-
-  <div class="card">
-    <h3>Enterprise Security Program Buildout</h3>
-    <p>
-      Built a full security program from the ground up across AWS and Azure.
-      Implemented IAM, vulnerability management, and vendor risk processes.
-    </p>
-    <p><strong>Impact:</strong> Achieved SOC 2 with zero findings.</p>
-  </div>
-
-  <div class="card">
-    <h3>Identity & Access Modernization</h3>
-    <p>
-      Led RBAC and least privilege implementation across cloud and SaaS systems.
-      Integrated MFA and lifecycle automation.
-    </p>
-    <p><strong>Impact:</strong> Reduced unauthorized access risk significantly.</p>
-  </div>
-
-  <div class="card">
-    <h3>Third-Party Risk Program</h3>
-    <p>
-      Designed and operationalized vendor risk assessments and BAA tracking.
-    </p>
-    <p><strong>Impact:</strong> Closed compliance gaps and improved audit readiness.</p>
-  </div>
-
-</section>
-
-<section class="projects">
-  <h2>What I Do</h2>
-
-  <div class="card">
-    <h3>Cloud Security</h3>
+/h3>
     <p>AWS, Azure, identity, and zero trust.</p>
   </div>
 
@@ -60,6 +25,40 @@
     <p>Building teams and scaling programs.</p>
   </div>
 </section>
+<section class="section container">
+  <h2>Selected Work</h2>
+
+  <div class="card">
+    <h3>Enterprise Security Program Buildout</h3>
+    <p>
+      Built and scaled a security program across AWS and Azure.
+      Implemented IAM, vulnerability management, and vendor risk.
+    </p>
+    <p><strong>Impact:</strong> SOC 2 achieved with zero findings.</p>
+    <span class="tag">Cloud</span>
+    <span class="tag">Compliance</span>
+  </div>
+
+  <div class="card">
+    <h3>Identity & Access Modernization</h3>
+    <p>
+      Designed RBAC and least privilege across SaaS and cloud systems.
+    </p>
+    <p><strong>Impact:</strong> Reduced access risk and improved auditability.</p>
+    <span class="tag">IAM</span>
+    <span class="tag">Zero Trust</span>
+  </div>
+
+  <div class="card">
+    <h3>Third-Party Risk Program</h3>
+    <p>
+      Built vendor risk workflows, BAA tracking, and assessment processes.
+    </p>
+    <p><strong>Impact:</strong> Closed compliance gaps and improved vendor visibility.</p>
+    <span class="tag">Risk</span>
+  </div>
+</section>
+
 <section class="section container">
   <h2>Writing</h2>
 
