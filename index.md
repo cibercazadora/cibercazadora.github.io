@@ -69,12 +69,33 @@
     </div>
   {% endfor %}
 </section>
+<section class="section container">
+  <h2>Explore</h2>
 
-<section class="blog-preview">
-  <h2>Latest Writing</h2>
+  <div class="filters">
+    <button onclick="filterPosts('all')">All</button>
+    <button onclick="filterPosts('cloud')">Cloud</button>
+    <button onclick="filterPosts('risk')">Risk</button>
+    <button onclick="filterPosts('leadership')">Leadership</button>
+  </div>
+</section>
 
-  {% for post in site.posts limit:3 %}
-    <div class="post-preview">
+<section class="section container">
+  <h2>Writing</h2>
+
+  <div id="posts">
+    {% for post in site.posts %}
+      <div class="card post-item"
+           data-category="{{ post.categories | join: ' ' }}">
+        
+        <a href="{{ post.url }}">{{ post.title }}</a>
+        <p>{{ post.excerpt | strip_html | truncate: 120 }}</p>
+
+      </div>
+    {% endfor %}
+  </div>
+</section>
+
       <a href="{{ post.url }}">{{ post.title }}</a>
     </div>
   {% endfor %}
