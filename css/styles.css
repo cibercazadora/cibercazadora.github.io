@@ -85,3 +85,28 @@ body {
   text-align: center;
   padding: 2rem 0;
 }
+.filters {
+  margin-bottom: 2rem;
+}
+
+.filters button {
+  margin-right: 10px;
+  padding: 6px 12px;
+  background: none;
+  border: 1px solid #333;
+  color: #9aa4b2;
+  cursor: pointer;
+}
+
+.filters button:hover {
+  border-color: #38bdf8;
+  color: white;
+}
+
+.tag {
+  display: inline-block;
+  margin-top: 10px;
+  margin-right: 8px;
+  font-size: 0.75rem;
+  color: #38bdf8;
+}
