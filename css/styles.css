@@ -25,6 +25,7 @@ body {
   color: #9aa4b2;
   text-decoration: none;
   margin-left: 20px;
+  transition: color 0.2s ease;
 }
 
 .header a:hover {
@@ -34,6 +35,93 @@ body {
 /* Hero */
 .hero {
   padding: 6rem 0 4rem;
+  max-width: 800px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.hero p {
+  color: #9aa4b2;
+  font-size: 1.2rem;
+}
+
+/* Sections */
+.section {
+  padding: 4rem 0;
+}
+
+.section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+/* Cards */
+.card {
+  border: 1px solid #1f2937;
+  padding: 1.5rem;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+}
+
+.card:hover {
+  border-color: #38bdf8;
+  transform: translateY(-2px);
+}
+
+/* Blog cards */
+.post-card {
+  display: block;
+  padding: 1rem;
+  background: #1e293b;
+  border-radius: 8px;
+  text-decoration: none;
+  color: white;
+  transition: background 0.2s ease;
+}
+
+.post-card:hover {
+  background: #273449;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 2rem 0;
+}
+
+/* Filters */
+.filters {
+  margin-bottom: 2rem;
+}
+
+.filters button {
+  margin-right: 10px;
+  padding: 6px 12px;
+  background: none;
+  border: 1px solid #333;
+  color: #9aa4b2;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filters button:hover {
+  border-color: #38bdf8;
+  color: white;
+}
+
+/* Tags */
+.tag {
+  display: inline-block;
+  margin-top: 10px;
+  margin-right: 8px;
+  font-size: 0.75rem;
+  color: #38bdf8;
+}
   max-width: 800px;
 }
 
