@@ -198,3 +198,8 @@ body {
   font-size: 0.75rem;
   color: #38bdf8;
 }
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
