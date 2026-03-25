@@ -1,22 +1,17 @@
 ---
 layout: default
 ---
-
-<div class="container">
-  <h1>{{ page.title }}</h1>
-  <p class="meta">{{ page.date | date: "%B %d, %Y" }}</p>
-
-  {{ content }}
-
-  <hr>
-
-  <div class="post-nav">
-    {% if page.previous %}
-      <a href="{{ page.previous.url }}">← {{ page.previous.title }}</a>
-    {% endif %}
-
-    {% if page.next %}
-      <a href="{{ page.next.url }}">{{ page.next.title }} →</a>
-    {% endif %}
+<article>
+  <header class="post-header">
+    <div class="container">
+      <a href="{{ '/#blog' | relative_url }}" style="font-size: 0.85rem; color: var(--text-muted); display: inline-block; margin-bottom: 1rem;">&larr; Back to blog</a>
+      <h1>{{ page.title }}</h1>
+      <div class="post-meta">{{ page.date | date: "%B %d, %Y" }}</div>
+    </div>
+  </header>
+  <div class="container">
+    <div class="post-content">
+      {{ content }}
+    </div>
   </div>
-</div>
+</article>
