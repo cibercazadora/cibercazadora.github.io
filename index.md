@@ -1,4 +1,5 @@
-   <header class="header">
+        <h3>Security Program Build</h3>
+    <header class="header">
   <div class="container header-inner">
     <div class="logo">Priscilla</div>
     <nav>
@@ -29,6 +30,77 @@
       <div class="card">
         <h3>Security Program Build</h3>
         <p>Built enterprise security across AWS + Azure.</p>
+        <p><strong>Result:</strong> SOC 2, zero findings</p>
+      </div>
+
+      <div class="card">
+        <h3>IAM Modernization</h3>
+        <p>RBAC, MFA, least privilege across SaaS + cloud.</p>
+        <p><strong>Result:</strong> Reduced exposure surface</p>
+      </div>
+
+      <div class="card">
+        <h3>Vendor Risk Engine</h3>
+        <p>Automated third-party risk + compliance workflows.</p>
+        <p><strong>Result:</strong> Faster audits, less friction</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESUME -->
+<section id="resume" class="section">
+  <div class="container">
+    <h2>Experience</h2>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <h3>Director of Information Security</h3>
+        <span>2022 – Present</span>
+        <p>Built and scaled security program across cloud, compliance, and risk.</p>
+      </div>
+
+      <div class="timeline-item">
+        <h3>Security Leadership</h3>
+        <span>Prior Roles</span>
+        <p>Led IAM, vendor risk, and vulnerability management programs.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BLOG -->
+<section id="blog" class="section">
+  <div class="container">
+    <h2>Writing</h2>
+
+    <div class="filters">
+      <button onclick="filterPosts('all')">All</button>
+      <button onclick="filterPosts('cloud')">Cloud</button>
+      <button onclick="filterPosts('risk')">Risk</button>
+      <button onclick="filterPosts('leadership')">Leadership</button>
+    </div>
+
+    <div class="grid">
+      <div class="card post" data-category="cloud">
+        <h3>Cloud Security at Scale</h3>
+        <p>Where most teams fail.</p>
+      </div>
+
+      <div class="card post" data-category="leadership">
+        <h3>Security Without Being the Bottleneck</h3>
+        <p>What actually works.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <p>© 2026 Priscilla</p>
+  </div>
+</footer>
+    <p>Built enterprise security across AWS + Azure.</p>
         <p><strong>Result:</strong> SOC 2, zero findings</p>
       </div>
 
