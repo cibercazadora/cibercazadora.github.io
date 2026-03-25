@@ -1,42 +1,81 @@
 <header class="header">
-  <div class="container">
-    ...
+  <div class="container header-inner">
+    <div><strong>Priscilla</strong></div>
+    <nav>
+      <a href="#">Work</a>
+      <a href="#">Projects</a>
+      <a href="#">Resume</a>
+      <a href="#">Blog</a>
+    </nav>
   </div>
 </header>
 
 <section class="hero">
   <div class="container">
-    ...
+    <h1>I build and scale security programs that actually work.</h1>
+    <p>
+      Cloud security, risk, and compliance leadership across high-growth environments.
+      From zero to audit-ready without slowing the business down.
+    </p>
   </div>
 </section>
 
 <section class="section">
   <div class="container">
-    ...
+    <h2>Selected Work</h2>
+
+    <div class="grid">
+      <div class="card">
+        <h3>Enterprise Security Program Buildout</h3>
+        <p>Built full program across AWS and Azure.</p>
+        <p><strong>Impact:</strong> SOC 2 zero findings</p>
+      </div>
+
+      <div class="card">
+        <h3>Identity Modernization</h3>
+        <p>RBAC, MFA, lifecycle automation.</p>
+        <p><strong>Impact:</strong> Reduced access risk</p>
+      </div>
+
+      <div class="card">
+        <h3>Third-Party Risk Program</h3>
+        <p>Vendor assessments + BAA tracking.</p>
+        <p><strong>Impact:</strong> Closed compliance gaps</p>
+      </div>
+    </div>
   </div>
 </section>
-      <p>Built enterprise security program across AWS & Azure.</p>
+
+<section class="section">
+  <div class="container">
+    <h2>Blog</h2>
+
+    <div class="filters">
+      <button onclick="filterPosts('all')">All</button>
+      <button onclick="filterPosts('cloud')">Cloud</button>
+      <button onclick="filterPosts('risk')">Risk</button>
+      <button onclick="filterPosts('leadership')">Leadership</button>
     </div>
 
-    <div class="card">
-      <h3>IAM Modernization</h3>
-      <p>Implemented RBAC, MFA, and least privilege.</p>
-    </div>
+    <div class="grid">
+      <div class="card post" data-category="cloud">
+        <h3>Securing AWS at Scale</h3>
+        <p>What actually breaks in real environments.</p>
+      </div>
 
-    <div class="card">
-      <h3>Vendor Risk Program</h3>
-      <p>Designed third-party risk and compliance workflows.</p>
+      <div class="card post" data-category="leadership">
+        <h3>Building Security Without Slowing Teams</h3>
+        <p>How to avoid becoming the bottleneck.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- EXPERIENCE -->
-<section class="section container">
-  <h2>Experience</h2>
-
-  <div class="timeline">
-    <div>
-      <h3>Director of Information Security</h3>
+<footer class="footer">
+  <div class="container">
+    <p>© 2026 Priscilla</p>
+  </div>
+</footer>
       <p>Led cloud, risk, and compliance strategy.</p>
     </div>
   </div>
