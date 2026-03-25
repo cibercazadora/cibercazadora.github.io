@@ -1,31 +1,20 @@
-<!-- HERO -->
-<section class="hero container">
-  <h1>
-    I build and scale security programs that hold up under real pressure.
-  </h1>
+<header class="header">
+  <div class="container">
+    ...
+  </div>
+</header>
 
-  <p>
-    Director-level leadership across cloud, risk, and compliance.
-    I turn fragmented controls into systems that scale and pass audits.
-  </p>
+<section class="hero">
+  <div class="container">
+    ...
+  </div>
 </section>
 
-<!-- ABOUT -->
-<section class="section container">
-  <h2>About</h2>
-  <p>
-    I lead security programs across cloud and compliance environments,
-    focusing on practical controls that reduce risk without slowing the business.
-  </p>
+<section class="section">
+  <div class="container">
+    ...
+  </div>
 </section>
-
-<!-- PROJECTS (GRID STYLE — THIS IS WHAT YOU’RE MISSING) -->
-<section class="section container">
-  <h2>Selected Work</h2>
-
-  <div class="grid">
-    <div class="card">
-      <h3>Security Program Buildout</h3>
       <p>Built enterprise security program across AWS & Azure.</p>
     </div>
 
