@@ -1,31 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ page.title }}</title>
-  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="/styles.css">
 </head>
-
 <body>
 
-<header class="header">
-  <div class="container">
-    <h1 class="logo">Priscilla</h1>
-    <nav>
-      <a href="/">Home</a>
-      <a href="/archive">Blog</a>
-    </nav>
-  </div>
-</header>
+  {% include header.html %}
 
-<main class="main">
-  {{ content }}
-</main>
+  <main>
+    {{ content }}
+  </main>
 
-<footer class="footer">
-  <p>© 2026 Priscilla</p>
-</footer>
+  {% include footer.html %}
 
 </body>
 </html>
