@@ -163,10 +163,10 @@ img { max-width: 100%; display: block; }
 
 /* ---- HERO ---- */
 .hero {
-  min-height: 100vh;
+  min-height: 85vh;
   display: flex;
   align-items: center;
-  padding: 6rem 0 4rem;
+  padding: 8rem 0 4rem;
   position: relative;
   overflow: hidden;
 }
