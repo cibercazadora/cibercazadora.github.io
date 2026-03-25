@@ -40,3 +40,8 @@ defaults:
       type: post
     values:
       tags: Other
+
+collections:
+  projects:
+    output: true
+
