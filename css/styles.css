@@ -1,80 +1,22 @@
-/* Base */
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  background: #0b0f19;
-  color: #e6edf3;
-  line-height: 1.6;
-}
-
-/* GLOBAL CONTAINER — THIS FIXES YOUR ALIGNMENT */
 .container {
-  width: 100%;
-  max-width: 900px;   /* tighter = premium look */
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 20px;
-  padding-right: 20px;
-}
-
-/* Header */
-.header {
-  border-bottom: 1px solid #1f2937;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 .header-inner {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.5rem 0;
 }
 
-.header a {
-  color: #9aa4b2;
-  text-decoration: none;
-  margin-left: 20px;
-}
-
-.header a:hover {
-  color: white;
-}
-
-/* Hero */
 .hero {
-  padding: 6rem 0 4rem;
-  text-align: center; /* KEY FIX */
+  text-align: center;
+  padding: 6rem 0;
 }
 
-.hero .container {
-  max-width: 700px; /* tighter hero */
-}
-
-.hero h1 {
-  font-size: 2.8rem;
-  font-weight: 500;
-  margin-bottom: 1rem;
-}
-
-.hero p {
-  color: #9aa4b2;
-  font-size: 1.2rem;
-  margin: 0 auto;
-}
-
-/* Sections */
-.section {
-  padding: 4rem 0;
-}
-
-.section h2 {
-  font-size: 1.4rem;
-  margin-bottom: 2rem;
-}
-
-/* GRID FIX (your site is missing this) */
 .grid {
   display: grid;
-  grid-template-columns: 1fr;
   gap: 20px;
 }
 
@@ -84,52 +26,10 @@ body {
   }
 }
 
-/* Cards */
 .card {
-  border: 1px solid #1f2937;
-  padding: 1.5rem;
-  border-radius: 12px;
   background: #111827;
-  transition: all 0.2s ease;
-}
-
-.card:hover {
-  border-color: #38bdf8;
-  transform: translateY(-3px);
-}
-
-/* Filters */
-.filters {
-  margin-bottom: 2rem;
-}
-
-.filters button {
-  margin-right: 10px;
-  padding: 6px 12px;
-  background: none;
+  padding: 1.5rem;
+  border-radius: 10px;
   border: 1px solid #1f2937;
-  color: #9aa4b2;
-  cursor: pointer;
-  border-radius: 6px;
 }
 
-.filters button:hover {
-  border-color: #38bdf8;
-  color: white;
-}
-
-/* Tags */
-.tag {
-  display: inline-block;
-  margin-top: 10px;
-  margin-right: 8px;
-  font-size: 0.75rem;
-  color: #38bdf8;
-}
-
-/* Footer */
-.footer {
-  text-align: center;
-  padding: 3rem 0;
-  color: #6b7280;
-}
