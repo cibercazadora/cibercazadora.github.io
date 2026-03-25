@@ -1,0 +1,35 @@
+---
+layout: default
+---
+
+<section class="hero">
+  <div class="container">
+    <h1>I build security programs that scale.</h1>
+    <p>Cloud, risk, compliance leadership.</p>
+  </div>
+</section>
+
+<section class="section container">
+  <h2>Projects</h2>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Security Program Build</h3>
+      <p>SOC 2 zero findings</p>
+    </div>
+  </div>
+</section>
+
+<section class="section container">
+  <h2>Blog</h2>
+
+  <div class="grid">
+    {% for post in site.posts %}
+      <a href="{{ post.url }}" class="card">
+        <h3>{{ post.title }}</h3>
+        <p>{{ post.excerpt }}</p>
+      </a>
+    {% endfor %}
+  </div>
+</section>
+ 
