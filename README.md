@@ -4,7 +4,7 @@ A Jekyll-powered portfolio site for cybersecurity professionals.
 
 ## Quick Start
 
-1. Copy all files to your `cibercazadora.github.io` repo (replace everything)
+1. Copy all files to your `xxx.github.io` repo (replace everything)
 2. Push to GitHub. GitHub Pages will build it automatically.
 
 That's it. No gems to install if you're using GitHub Pages' built-in Jekyll.
