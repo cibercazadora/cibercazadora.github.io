@@ -243,8 +243,8 @@ img { max-width: 100%; display: block; }
 .hero-image img {
   width: 100%;
   max-width: 280px;
-  border-radius: 16px;
-  border: 1px solid #1f2937;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
 }
 
 /* Optional: make it look more premium */
