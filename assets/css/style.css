@@ -166,7 +166,7 @@ img { max-width: 100%; display: block; }
   min-height: 85vh;
   display: flex;
   align-items: center;
-  padding: 8rem 0 4rem;
+  padding: 5rem 0 4rem;
   position: relative;
   overflow: hidden;
 }
@@ -277,7 +277,7 @@ section {
 
 .section-label {
   font-family: var(--font-mono);
-  font-size: 0.75rem;
+  font-size: 2rem;
   color: var(--accent);
   letter-spacing: 0.15em;
   text-transform: uppercase;
@@ -338,7 +338,7 @@ section {
 }
 
 .stat-label {
-  font-size: 0.85rem;
+  font-size: 1rem;
   color: var(--text-muted);
   margin-top: 0.25rem;
 }
