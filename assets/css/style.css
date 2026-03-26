@@ -166,7 +166,7 @@ img { max-width: 100%; display: block; }
   min-height: 85vh;
   display: flex;
   align-items: center;
-  padding: 5rem 0 4rem;
+  padding: 8rem 0 4rem;
   position: relative;
   overflow: hidden;
 }
@@ -277,7 +277,7 @@ section {
 
 .section-label {
   font-family: var(--font-mono);
-  font-size: 2rem;
+  font-size: 0.75rem;
   color: var(--accent);
   letter-spacing: 0.15em;
   text-transform: uppercase;
@@ -338,7 +338,7 @@ section {
 }
 
 .stat-label {
-  font-size: 1rem;
+  font-size: 0.85rem;
   color: var(--text-muted);
   margin-top: 0.25rem;
 }
@@ -346,7 +346,7 @@ section {
 /* ---- SKILLS ---- */
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
   gap: var(--gap);
 }
 
@@ -488,6 +488,40 @@ section {
 
 .project-result strong {
   color: var(--success);
+}
+
+.project-links {
+  margin-top: 1.25rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  padding: 0.35rem 0.75rem;
+  background: var(--bg-primary);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  color: var(--text-secondary);
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.project-link:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.project-link svg {
+  width: 14px;
+  height: 14px;
+  fill: currentColor;
 }
 
 /* ---- EXPERIENCE / RESUME ---- */
