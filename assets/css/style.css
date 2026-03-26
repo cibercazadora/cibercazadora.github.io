@@ -227,6 +227,33 @@ img { max-width: 100%; display: block; }
   margin-bottom: 2.5rem;
 }
 
+.hero-flex {
+  display: grid;
+  gap: 40px;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .hero-flex {
+    grid-template-columns: 1.5fr 1fr;
+  }
+}
+
+/* Image styling */
+.hero-image img {
+  width: 100%;
+  max-width: 280px;
+  border-radius: 16px;
+  border: 1px solid #1f2937;
+}
+
+/* Optional: make it look more premium */
+.hero-image {
+  display: flex;
+  justify-content: center;
+}
+
+
 .hero-cta {
   display: flex;
   gap: 1rem;
