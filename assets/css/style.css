@@ -259,7 +259,8 @@ img { max-width: 100%; display: block; }
 /* Optional: make it look more premium */
 .hero-image {
   display: flex;
-  justify-content: flex-end;
+  justify-content: start;
+  padding-bottom: 1rem;
 }
 
 .hero-cta {
