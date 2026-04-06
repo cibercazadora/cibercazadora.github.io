@@ -428,8 +428,13 @@ I mentor through WiCyS and (ISC)² because this industry needs more people who l
     </p>
 
     <div class="blog-grid stagger-children">
-
-      {% for post in site.posts limit:3 %}
+<!-- ======RSS Feed from Substack ======-->
+ 
+<div id="substack-posts">
+  <!-- posts load here -->
+</div>
+<!-- ======old blog feed from Github ======-->
+      <!--{% for post in site.posts limit:3 %}
       <a href="{{ post.url | relative_url }}" class="blog-card fade-up">
         <span class="blog-date">{{ post.date | date: "%B %d, %Y" }}</span>
         <h3>{{ post.title }}</h3>
@@ -438,8 +443,8 @@ I mentor through WiCyS and (ISC)² because this industry needs more people who l
       </a>
       {% endfor %}
 
-      {% if site.posts.size == 0 %}
-      <!-- Placeholder cards while you write posts -->
+      {% if site.posts.size == 0 %}-->
+      <!-- Placeholder cards while you write posts 
       <div class="blog-card fade-up">
         <span class="blog-date">Coming Soon</span>
         <h3>Why Your SOC 2 Program Doesn't Need to Be Painful</h3>
@@ -451,7 +456,7 @@ I mentor through WiCyS and (ISC)² because this industry needs more people who l
         <p>The same five misconfigurations keep showing up. Here's how to fix them before your next audit.</p>
       </div>
       {% endif %}
-
+-->
     </div>
   </div>
 </section>

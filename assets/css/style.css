@@ -621,6 +621,19 @@ section {
 }
 
 /* ---- BLOG ---- */
+.blog-post-preview {
+  border-left: 2px solid currentColor;
+  padding-left: 1.25rem;
+  opacity: 0.9;
+  transition: opacity 0.2s ease;
+}
+ 
+
+.blog-post-preview:hover {
+  opacity: 1;
+}
+ 
+
 .blog-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
@@ -825,6 +838,63 @@ section {
   margin: 2rem 0;
   color: var(--text-secondary);
   font-style: italic;
+}
+
+#substack-posts {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+
+.post-preview-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+ 
+.post-preview-date {
+  display: block;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.55;
+  margin-bottom: 0.35rem;
+}
+ 
+.blog-post-preview h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+  line-height: 1.35;
+}
+ 
+.blog-post-preview p {
+  font-size: 0.88rem;
+  opacity: 0.65;
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+}
+ 
+.read-more {
+  font-size: 0.8rem;
+  opacity: 0.5;
+  letter-spacing: 0.04em;
+  transition: opacity 0.2s;
+}
+ 
+.post-preview-link:hover .read-more {
+  opacity: 1;
+}
+ 
+.feed-error {
+  font-size: 0.9rem;
+  opacity: 0.6;
+}
+ 
+.feed-error a {
+  text-decoration: underline;
 }
 
 /* ---- ANIMATIONS ---- */
