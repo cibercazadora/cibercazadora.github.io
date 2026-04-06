@@ -1,6 +1,5 @@
 // ─── Substack Feed Loader ─────────────────────────────────
-// Fetches latest posts from Security Translated and renders
-// them into the #substack-posts container in the Writing section.
+// Uses Substack's native API directly — no third-party proxy.
 
 const SUBSTACK_URL = "https://securitytranslated.substack.com";
 const POST_LIMIT   = 6;
@@ -9,36 +8,24 @@ const POST_LIMIT   = 6;
   const container = document.getElementById("substack-posts");
   if (!container) return;
 
-  const rssUrl = `${SUBSTACK_URL}/feed`;
-  const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}&count=${POST_LIMIT}`;
+  const apiUrl = `${SUBSTACK_URL}/api/v1/posts?limit=${POST_LIMIT}`;
 
   try {
-    const res  = await fetch(apiUrl);
-    const data = await res.json();
+    const res = await fetch(apiUrl);
 
-    if (data.status !== "ok" || !data.items?.length) {
+    if (!res.ok) throw new Error(`API responded with ${res.status}`);
+
+    const posts = await res.json();
+
+    if (!Array.isArray(posts) || !posts.length) {
       throw new Error("No posts returned.");
     }
 
     container.innerHTML = "";
 
-    data.items.forEach(post => {
-      const article = document.createElement("article");
-      article.className = "blog-post-preview";
-
-      const date = formatDate(post.pubDate);
-      const excerpt = stripHtml(post.description || post.content || "").slice(0, 160).trim();
-
-      article.innerHTML = `
-        <a href="${post.link}" target="_blank" rel="noopener noreferrer" class="post-preview-link">
-          <span class="post-preview-date">${date}</span>
-          <h3>${escapeHtml(post.title)}</h3>
-          <p>${escapeHtml(excerpt)}${excerpt.length >= 160 ? "…" : ""}</p>
-          <span class="read-more">Read more →</span>
-        </a>
-      `;
-
-      container.appendChild(article);
+    posts.forEach(post => {
+      const card = buildCard(post);
+      container.appendChild(card);
     });
 
   } catch (err) {
@@ -51,6 +38,27 @@ const POST_LIMIT   = 6;
     `;
   }
 })();
+
+// ─── Build a single post card ──────────────────────────────
+function buildCard(post) {
+  const article = document.createElement("article");
+  article.className = "blog-post-preview";
+
+  const url     = `${SUBSTACK_URL}/p/${post.slug}`;
+  const date    = formatDate(post.post_date);
+  const excerpt = post.subtitle || stripHtml(post.body_html || "").slice(0, 160).trim();
+
+  article.innerHTML = `
+    <a href="${url}" target="_blank" rel="noopener noreferrer" class="post-preview-link">
+      <span class="post-preview-date">${date}</span>
+      <h3>${escapeHtml(post.title)}</h3>
+      <p>${escapeHtml(excerpt)}${excerpt.length >= 160 ? "…" : ""}</p>
+      <span class="read-more">Read more →</span>
+    </a>
+  `;
+
+  return article;
+}
 
 // ─── Helpers ──────────────────────────────────────────────
 function stripHtml(html) {
