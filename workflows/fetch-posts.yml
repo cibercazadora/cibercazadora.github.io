@@ -1,0 +1,76 @@
+name: Fetch Substack Posts
+
+on:
+  schedule:
+    - cron: "0 */6 * * *"   # runs every 6 hours
+  workflow_dispatch:          # lets you trigger it manually from GitHub
+  push:
+    branches: [main]          # also runs on every deploy
+
+jobs:
+  fetch-posts:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Fetch Substack RSS feed
+        run: |
+          curl -s "https://securitytranslated.substack.com/feed" \
+            -H "User-Agent: Mozilla/5.0" \
+            -o feed.xml
+
+      - name: Parse feed and write posts.json
+        run: |
+          python3 - <<'EOF'
+          import xml.etree.ElementTree as ET
+          import json, re
+          from datetime import datetime
+
+          tree = ET.parse("feed.xml")
+          root = tree.getroot()
+          ns = {"content": "http://purl.org/rss/1.0/modules/content/"}
+          items = root.findall(".//item")
+
+          posts = []
+          for item in items[:8]:
+              title = item.findtext("title", "").strip()
+              link  = item.findtext("link", "").strip()
+              date  = item.findtext("pubDate", "").strip()
+              desc  = item.findtext("description", "").strip()
+
+              # strip html tags from description
+              clean = re.sub(r"<[^>]+>", "", desc).strip()
+              clean = clean[:200] if len(clean) > 200 else clean
+
+              # parse and reformat date
+              try:
+                  dt = datetime.strptime(date, "%a, %d %b %Y %H:%M:%S %z")
+                  formatted = dt.strftime("%B %-d, %Y")
+              except Exception:
+                  formatted = date
+
+              posts.append({
+                  "title":   title,
+                  "url":     link,
+                  "date":    formatted,
+                  "excerpt": clean,
+              })
+
+          with open("posts.json", "w") as f:
+              json.dump(posts, f, indent=2)
+
+          print(f"Wrote {len(posts)} posts to posts.json")
+          EOF
+
+      - name: Commit posts.json if changed
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add posts.json
+          git diff --cached --quiet || git commit -m "chore: refresh Substack posts"
+          git push

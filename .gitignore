@@ -1,1 +1,13 @@
 ﻿_site
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# Editor folders
+.vscode/
+.idea/
+
+# Temp file from the GitHub Action (if you ever run the workflow locally)
+feed.xml
