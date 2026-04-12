@@ -1,34 +1,37 @@
 name: Fetch Substack Posts
-
 on:
-  schedule:
-    - cron: "0 */6 * * *" # Run every 6 hours
   workflow_dispatch:
   push:
-    branches: [main]
-
+    branches:
+      - main
 jobs:
-  fetch-posts:
+  fetch:
     runs-on: ubuntu-latest
     permissions:
-      contents: write #required to push changes
+      contents: write
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v4
-        with:
-          feed_url: 'https://example.com/rss'
-          file_path: './data/feed.json'
-          
-      - name: Fetch and parse feed
-        run: |
-          curl -s https://securitytranslated.substack.com/feed | \
-            xml2json | \
-            jq -r '.rss.channel.item[] | {title: .title, link: .link, pubDate: .pubDate} | @json' > posts.json  
-
-      - name: Commit posts.json
-        run: |
+      - uses: actions/checkout@v4
+      - run: curl -s "https://securitytranslated.substack.com/feed" -H "User-Agent: Mozilla/5.0" -o feed.xml
+      - run: |
+          python -c "
+          import xml.etree.ElementTree as ET, json, re
+          from datetime import datetime
+          root = ET.parse('feed.xml').getroot()
+          posts = []
+          for item in root.findall('.//item')[:8]:
+            title = item.findtext('title','').strip()
+            link = item.findtext('link','').strip()
+            date = item.findtext('pubDate','').strip()
+            desc = re.sub(r'<[^>]+>','',item.findtext('description','').strip())[:200]
+            try: date = datetime.strptime(date,'%a, %d %b %Y %H:%M:%S %z').strftime('%B %-d, %Y')
+            except: pass
+            posts.append({'title':title,'url':link,'date':date,'excerpt':desc})
+          json.dump(posts,open('posts.json','w'),indent=2)
+          print('done',len(posts))
+          "
+      - run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add posts.json
-          git diff --cached --quiet || git commit -m "chore: refresh Substack posts"
+          git diff --cached --quiet || git commit -m "chore: refresh posts"
           git push
