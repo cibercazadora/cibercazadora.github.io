@@ -1,46 +1,24 @@
 name: Fetch Substack Posts
-
 on:
-  schedule:
-    - cron: "0 */6 * * *"
   workflow_dispatch:
   push:
-    branches: [main]
-
+    branches:
+      - main
+  schedule:
+    - cron: "0 */6 * * *"
 jobs:
-  fetch-posts:
+  fetch:
     runs-on: ubuntu-latest
     permissions:
       contents: write
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Fetch and parse feed
-        run: |
-          curl -s "https://securitytranslated.substack.com/feed" -H "User-Agent: Mozilla/5.0" -o feed.xml
-          python3 - <<'EOF'
-          import xml.etree.ElementTree as ET
-          import json, re
-          from datetime import datetime
-          tree = ET.parse("feed.xml")
-          root = tree.getroot()
-          posts = []
-          for item in root.findall(".//item")[:8]:
-              title = item.findtext("title", "").strip()
-              link  = item.findtext("link", "").strip()
-              date  = item.findtext("pubDate", "").strip()
-              desc  = item.findtext("description", "").strip()
-              clean = re.sub(r"<[^>]+>", "", desc).strip()[:200]
-              try:
-                  dt = datetime.strptime(date, "%a, %d %b %Y %H:%M:%S %z")
-                  formatted = dt.strftime("%B %-d, %Y")
-              except:
-                  formatted = date
-              posts.append({"title": title, "url": link, "date": formatted, "excerpt": clean})
-          json.dump(posts, open("posts.json","w"), indent=2)
-          print(f"Wrote {len(posts)} posts")
-          EOF
+      - name: Install requests
+        run: pip install requests --quiet
+
+      - name: Run update script
+        run: python update-posts.py
 
       - name: Commit posts.json
         run: |
