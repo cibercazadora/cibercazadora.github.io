@@ -1,74 +1,50 @@
 name: Fetch Substack Posts
+
 on:
   schedule:
-    - cron: "0 */6 * * *"   # runs every 6 hours
-  workflow_dispatch:          # lets you trigger it manually from GitHub
+    - cron: "0 */6 * * *"
+  workflow_dispatch:
   push:
-    branches: [main]          # also runs on every deploy
+    branches: [main]
 
 jobs:
   fetch-posts:
     runs-on: ubuntu-latest
-
     permissions:
       contents: write
-
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: Fetch Substack RSS feed
+      - name: Fetch and parse feed
         run: |
-          curl -s "https://securitytranslated.substack.com/feed" \
-            -H "User-Agent: Mozilla/5.0" \
-            -o feed.xml
-
-      - name: Parse feed and write posts.json
-        run: |
+          curl -s "https://securitytranslated.substack.com/feed" -H "User-Agent: Mozilla/5.0" -o feed.xml
           python3 - <<'EOF'
           import xml.etree.ElementTree as ET
           import json, re
           from datetime import datetime
-
           tree = ET.parse("feed.xml")
           root = tree.getroot()
-          ns = {"content": "http://purl.org/rss/1.0/modules/content/"}
-          items = root.findall(".//item")
-
           posts = []
-          for item in items[:8]:
+          for item in root.findall(".//item")[:8]:
               title = item.findtext("title", "").strip()
               link  = item.findtext("link", "").strip()
               date  = item.findtext("pubDate", "").strip()
               desc  = item.findtext("description", "").strip()
-
-              # strip html tags from description
-              clean = re.sub(r"<[^>]+>", "", desc).strip()
-              clean = clean[:200] if len(clean) > 200 else clean
-
-              # parse and reformat date
+              clean = re.sub(r"<[^>]+>", "", desc).strip()[:200]
               try:
                   dt = datetime.strptime(date, "%a, %d %b %Y %H:%M:%S %z")
                   formatted = dt.strftime("%B %-d, %Y")
-              except Exception:
+              except:
                   formatted = date
-
-              posts.append({
-                  "title":   title,
-                  "url":     link,
-                  "date":    formatted,
-                  "excerpt": clean,
-              })
-
-          with open("posts.json", "w") as f:
-              json.dump(posts, f, indent=2)
-
-          print(f"Wrote {len(posts)} posts to posts.json")
+              posts.append({"title": title, "url": link, "date": formatted, "excerpt": clean})
+          json.dump(posts, open("posts.json","w"), indent=2)
+          print(f"Wrote {len(posts)} posts")
           EOF
 
-      - name: Commit posts.json if changed
+      - name: Commit posts.json
         run: |
-          git config user.name  "github-actions[bot]"
+          git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add posts.json
           git diff --cached --quiet || git commit -m "chore: refresh Substack posts"
