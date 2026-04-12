@@ -17,40 +17,40 @@ jobs:
       - name: Install requests
         run: pip install requests --quiet
 
-      - name: Fetch feed and generate posts.json
+      - name: Fetch posts and generate posts.json
         run: |
           python3 << 'PYEOF'
           import requests
-          import xml.etree.ElementTree as ET
           import json
           import re
           from datetime import datetime
 
           headers = {
               "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
-              "Accept": "application/rss+xml, application/xml, text/xml, */*",
-              "Accept-Language": "en-US,en;q=0.9",
-              "Referer": "https://securitytranslated.substack.com/",
+              "Accept": "application/json",
           }
 
-          url = "https://securitytranslated.substack.com/feed"
+          url = "https://securitytranslated.substack.com/api/v1/posts?limit=8"
           res = requests.get(url, headers=headers, timeout=15)
+
+          print(f"Status: {res.status_code}")
+
           res.raise_for_status()
 
-          root = ET.fromstring(res.content)
+          data = res.json()
 
           posts = []
-          for item in root.findall(".//item")[:8]:
-              title = item.findtext("title", "").strip()
-              link  = item.findtext("link", "").strip()
-              date  = item.findtext("pubDate", "").strip()
-              desc  = item.findtext("description", "").strip()
-              desc  = re.sub(r"<[^>]+>", "", desc).strip()[:200]
+          for post in data[:8]:
+              title   = post.get("title", "").strip()
+              slug    = post.get("slug", "")
+              url     = f"https://securitytranslated.substack.com/p/{slug}"
+              excerpt = post.get("subtitle", "") or re.sub(r"<[^>]+>", "", post.get("body_html", "")).strip()[:200]
+              date    = post.get("post_date", "")
               try:
-                  date = datetime.strptime(date, "%a, %d %b %Y %H:%M:%S %z").strftime("%B %-d, %Y")
+                  date = datetime.strptime(date[:10], "%Y-%m-%d").strftime("%B %-d, %Y")
               except Exception:
                   pass
-              posts.append({"title": title, "url": link, "date": date, "excerpt": desc})
+              posts.append({"title": title, "url": url, "date": date, "excerpt": excerpt})
 
           with open("posts.json", "w") as f:
               json.dump(posts, f, indent=2)
