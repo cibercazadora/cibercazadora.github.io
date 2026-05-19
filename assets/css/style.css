@@ -4,6 +4,34 @@
    ======================================== */
 
 :root {
+/*added palette and typography variables for the new design system  */
+  --st-bg-deep:    #0f1117;   /* page background */
+  --st-bg-surface: #161b27;   /* cards, panels */
+  --st-bg-raised:  #1e2535;   /* elevated elements */
+  --st-bg-teal:    #0a1f18;   /* teal-tinted surface */
+
+  --st-border:     #2d3548;   /* default border */
+  --st-border-teal:#1D9E75;   /* teal accent border */
+
+  --st-text-primary:  #f1f5f9;
+  --st-text-body:     #e2e8f0;
+  --st-text-muted:    #64748b;
+  --st-text-dim:      #475569;
+
+  --st-teal:       #1D9E75;   /* primary accent */
+  --st-teal-light: #5DCAA5;   /* headings on teal bg */
+  --st-teal-soft:  #9FE1CB;   /* body text on teal bg */
+
+  --st-purple:     #7F77DD;
+  --st-purple-light: #AFA9EC;
+
+  --st-radius-sm: 8px;
+  --st-radius-md: 10px;
+  --st-radius-lg: 16px;
+
+  --st-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+
+/*added palette and typography variables for the new design system  */
   /* Palette: Deep navy base, warm amber accent */
   --bg-primary: #0a0e17;
   --bg-secondary: #111827;
@@ -35,14 +63,76 @@
   --gap: 1.5rem;
 }
 
+/* ── Brand mark (dot + name) ─────────────────── */
+.st-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.st-brand-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--st-teal);
+  flex-shrink: 0;
+}
+.st-brand-name {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--st-teal);
+}
+
+/* ── brand Section divider ─────────────────────────── */
+.st-section-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 3rem 0 1.5rem;
+}
+.st-section-divider .st-brand-dot {
+  flex-shrink: 0;
+}
+.st-section-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--st-text-dim);
+  white-space: nowrap;
+}
+.st-section-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--st-border);
+}
+
+/* ── Section card (matches formula/callout style) */
+.st-card {
+  background: var(--st-bg-surface);
+  border: 1px solid var(--st-border);
+  border-radius: var(--st-radius-lg);
+  padding: 2rem;
+}
+.st-card-teal {
+  background: var(--st-bg-teal);
+  border-color: var(--st-border-teal);
+}
+
 /* ---- RESET ---- */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
 
 body {
-  font-family: var(--font-body);
-  background: var(--bg-primary);
-  color: var(--text-primary);
+  /*font-family: var(--font-body);*/
+  font-family: var(--st-font);
+ /* background: var(--bg-primary);*/
+  background: var(--st-bg-deep);
+  /*color: var(--text-primary);*/
+  color: var(--st-text-body);
+
   line-height: 1.7;
   font-size: 1rem;
   -webkit-font-smoothing: antialiased;
@@ -137,6 +227,113 @@ img { max-width: 100%; display: block; }
   margin: 5px 0;
   transition: transform 0.3s, opacity 0.3s;
 }
+
+  .st-callout {
+    background: #161b27;
+    border: 1px solid #2d3548;
+    border-left: 3px solid #1D9E75;
+    border-radius: 12px;
+    padding: 1.5rem;
+    max-width: 680px;
+    display: flex;
+    gap: 1.25rem;
+    align-items: flex-start;
+    margin: 2rem 0;
+  }
+
+  .st-icon-wrap {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    background: #0a1f18;
+    border: 1px solid #1D9E75;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+  }
+
+  .st-icon-wrap svg {
+    width: 20px;
+    height: 20px;
+    stroke: #1D9E75;
+    fill: none;
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .st-body {
+    flex: 1;
+  }
+
+  .st-eyebrow {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #1D9E75;
+    margin: 0 0 6px;
+  }
+
+  .st-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #f1f5f9;
+    margin: 0 0 6px;
+    line-height: 1.4;
+  }
+
+  .st-desc {
+    font-size: 13px;
+    color: #64748b;
+    line-height: 1.6;
+    margin: 0 0 1rem;
+  }
+
+  .st-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #1D9E75;
+    background: transparent;
+    border: 1px solid #1D9E75;
+    border-radius: 8px;
+    padding: 7px 14px;
+    text-decoration: none;
+    transition: background 0.15s ease;
+  }
+
+  .st-cta:hover {
+    background: #0a1f18;
+    color: #5DCAA5;
+  }
+
+  .st-cta svg {
+    width: 14px;
+    height: 14px;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .st-fine {
+    font-size: 11px;
+    color: #475569;
+    margin: 10px 0 0;
+  }
+
+  @media (max-width: 500px) {
+    .st-callout {
+      flex-direction: column;
+      gap: 1rem;
+    }
+  }
 
 @media (max-width: 768px) {
   .nav-toggle { display: block; }
