@@ -1,34 +1,54 @@
+# .github/workflows/fetch-posts.yml
+#
+# Runs daily at 8am UTC and on every push to main.
+# Fetches your Substack RSS feed, converts it to posts.json,
+# and commits the file back to the repo if anything changed.
+# Your index.html reads posts.json directly — no CORS, no API keys.
+#
+# HOW TO SET UP:
+# 1. Create this file at .github/workflows/fetch-posts.yml in your repo
+# 2. Push to main — it will run automatically
+# 3. That's it. GitHub Actions has write access to your repo by default.
+
 name: Fetch Substack Posts
 
 on:
   schedule:
-    - cron: "0 0 5 31 2" # Don't run until push to portfolio fixed
-  workflow_dispatch:
+    - cron: '0 8 * * *'   # Daily at 8am UTC
   push:
     branches: [main]
+  workflow_dispatch:       # Lets you trigger it manually from the Actions tab
+
+permissions:
+  contents: write          # Needed to commit posts.json back to the repo
 
 jobs:
-  fetch-posts:
+  fetch:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write #required to push changes
+
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
         with:
-          feed_url: 'https://example.com/rss'
-          file_path: './data/feed.json'
+          python-version: '3.11'
 
-      - name: Fetch and parse feed
-        run: |
-          curl -s https://securitytranslated.substack.com/feed | \
-            xml2json | \
-            jq -r '.rss.channel.item[] | {title: .title, link: .link, pubDate: .pubDate} | @json' > posts.json  
+      - name: Install dependencies
+        run: pip install requests feedparser
 
-      - name: Commit posts.json
+      - name: Fetch posts and write posts.json
+        run: python3 .github/scripts/fetch_posts.py
+
+      - name: Commit posts.json if changed
         run: |
-          git config user.name "github-actions[bot]"
+          git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add posts.json
-          git diff --cached --quiet || git commit -m "chore: refresh Substack posts"
-          git push
+          if git diff --staged --quiet; then
+            echo "No changes to posts.json — skipping commit"
+          else
+            git commit -m "chore: update posts.json [skip ci]"
+            git push
+          fi

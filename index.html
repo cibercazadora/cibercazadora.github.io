@@ -105,13 +105,65 @@ ee universities for a decade, and founded a consultancy in Hawai'i. Today I'm Di
 </br>
  Or read it on <a href="https://securitytranslated.substack.com" target="_blank" rel="noopener">Substack</a>.
 </p>
-<script> window.SubstackFeedWidget = 
-	{ substackUrl: 
-    	"securitytranslated.substack.com", posts: 3, showImages: true, showDates: true 
-	}; 
+
+
+<script>
+(function () {
+  const SUBSTACK_URL = 'https://securitytranslated.substack.com';
+  const container    = document.getElementById('substack-feed-embed');
+  if (!container) return;
+
+  const buildCard = (post) => {
+    const a = document.createElement('a');
+    a.className = 'st-post-card';
+    a.href      = post.url || SUBSTACK_URL;
+    a.target    = '_blank';
+    a.rel       = 'noopener';
+
+    a.innerHTML = `
+      <div class="st-post-meta">
+        <div class="st-post-dot"></div>
+        ${post.date ? `<span class="st-post-date">${post.date}</span>` : ''}
+      </div>
+      <p class="st-post-title">${post.title || 'Untitled'}</p>
+      ${post.excerpt ? `<p class="st-post-desc">${post.excerpt}</p>` : ''}
+      <span class="st-post-cta">Read in Security Translated →</span>
+    `;
+    return a;
+  };
+
+  const showFallback = () => {
+    container.innerHTML = `
+      <a class="st-post-card" href="${SUBSTACK_URL}" target="_blank" rel="noopener"
+         style="text-align:center; padding:1.5rem; display:block;">
+        <p class="st-post-desc" style="margin-bottom:12px;">
+          Weekly breakdowns for the people who build security
+          and the people who fund it.
+        </p>
+        <span class="st-post-cta">Read Security Translated →</span>
+      </a>
+    `;
+  };
+
+  fetch('posts.json')
+    .then(r => {
+      if (!r.ok) throw new Error(`posts.json not found (${r.status})`);
+      return r.json();
+    })
+    .then(posts => {
+      if (!Array.isArray(posts) || !posts.length) throw new Error('Empty');
+      container.innerHTML = '';
+      posts.forEach(p => container.appendChild(buildCard(p)));
+    })
+    .catch(err => {
+      console.warn('Could not load posts.json:', err.message);
+      showFallback();
+    });
+})();
 </script>
-<script src="./embed-substack-rss.js"></script>
-<iframe src="https://securitytranslated.substack.com/embed?transparent=1&light=1" width="480" height="150" style="border: 0; background: transparent" frameborder="0" scrolling="no"></iframe>
+
+<iframe src="https://securitytranslated.substack.com/embed?transparent=1&light=1" width="480" height="150" style="border: 0; background: transparent" frameborder="0" scrolling="no">
+</iframe>
 <!-- Security Translated — Lead Magnet Callout Box -->
 
 <!--<div class="st-callout">-->
@@ -124,7 +176,7 @@ ee universities for a decade, and founded a consultancy in Hawai'i. Today I'm Di
       <line x1="16" y1="17" x2="8" y2="17"/>
       <polyline points="10 9 9 9 8 9"/>
     </svg>
-  <!--</div>
+  <!--</div>-->
 
   <!-- <div class="st-body">-->
     <p class="st-eyebrow">Free for subscribers &middot; Security Translated</p>
