@@ -38,7 +38,6 @@ title: Ciber Cazadora
         <p>
         I started in the U.S. Air Force. Six years active duty taught me one thing fast: security is operational. There's no room for "good enough."        
       </p>
-      <hr>
         <p>
           Since then, I've built security programs from scratch more than once, taught ethical hacking and digital forensics at three universities for a decade, and founded a consultancy in Hawai'i. Today I'm Director of Information Security at a company that grew 253% while I built the program with two people and no outside help.
         </p>
@@ -58,7 +57,9 @@ title: Ciber Cazadora
           I mentor through WiCyS and (ISC)². I still play on TryHackMe, Hack The Box, and participate in CTFs. When I'm not doing either, I'm baking or binging Netflix with the family.
         </p>
       </div>
-      <div class="about-stats stagger-children">
+
+      <!--Stats-->
+        <div class="about-stats stagger-children">
         <div class="stat fade-up">
           <div class="stat-number">0</div>
           <div class="stat-label">Major audit findings (SOC 2, HIPAA, NIST)</div>
@@ -89,7 +90,9 @@ title: Ciber Cazadora
     <h2 class="section-title">Security Translated.</h2>
     <p class="section-subtitle">
     Every week I publish two things: a framework your board will understand, and something your engineers can actually build. No vendor pitches. No rehashed press releases. Just the translation layer most security teams are missing.    
-    </br></br>Topics are a part of 12 pillars: AI in Security, DevSecOps, Container/Cloud Native Security, Code Review and AppSec, Vulnerability Management, Security Architecure & Strategy, Incident Response & Threat Detection, Security Operations & Team Building. 
+  </p>
+    <p class="section-subtitle">
+    Topics are a part of 12 pillars: AI in Security, DevSecOps, Container/Cloud Native Security, Code Review and AppSec, Vulnerability Management, Security Architecure & Strategy, Incident Response & Threat Detection, Security Operations & Team Building. 
   </p>
   <!-- ======RSS Feed from Substack ======-->
  
@@ -164,36 +167,76 @@ title: Ciber Cazadora
 <iframe src="https://securitytranslated.substack.com/embed?transparent=1&light=1" width="480" height="150" style="border: 0; background: transparent" frameborder="0" scrolling="no">
 </iframe>
 <!-- Security Translated — Lead Magnet Callout Box -->
+<!-- Self-contained: all styles are inline, no external CSS needed -->
 
-<!--<div class="st-callout">-->
-  <div class="st-icon-wrap" aria-hidden="true">
-    <!-- File/document icon (inline SVG — no external dependency) -->
-    <svg viewBox="0 0 24 24">
+<div style="
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  background: #0a1f18;
+  border: 1px solid #1D9E75;
+  border-radius: 10px;
+  padding: 16px 18px;
+  margin: 1.5rem 0;
+  max-width: 680px;
+">
+
+  <div style="
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    border-radius: 6px;
+    border: 1px solid #1D9E75;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  " aria-hidden="true">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+         stroke="#1D9E75" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
       <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
       <polyline points="14 2 14 8 20 8"/>
       <line x1="16" y1="13" x2="8" y2="13"/>
       <line x1="16" y1="17" x2="8" y2="17"/>
-      <polyline points="10 9 9 9 8 9"/>
     </svg>
-  <!--</div>-->
+  </div>
 
-  <!-- <div class="st-body">-->
-    <p class="st-eyebrow">Free for subscribers &middot; Security Translated</p>
-    <p class="st-title">Get the Board Briefing Template</p>
-    <p class="st-desc">
-      The one-pager I use to turn a security risk into a 5-minute exec update.
-      Translates threat data into budget language — no buzzwords, no slide bloat.
-      Take it to your next exec meeting.
+  <div style="flex: 1; min-width: 0;">
+    <p style="font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #1D9E75; margin: 0 0 5px;">
+      Free for subscribers &middot; Security Translated
     </p>
-    <a class="st-cta" href="https://securitytranslated.substack.com" target="_blank" rel="noopener">
+    <p style="font-size: 14px; font-weight: 600; color: #5DCAA5; margin: 0 0 6px; line-height: 1.3;">
+      Get the Board Briefing Template
+    </p>
+    <p style="font-size: 12px; color: #1D9E75; margin: 0 0 12px; line-height: 1.5;">
+      The one-pager I use to turn a security risk into a 5-minute exec update.
+      Threat data into budget language — no buzzwords, no slide bloat.
+    </p>
+    <a href="https://securitytranslated.substack.com" target="_blank" rel="noopener" style="
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 12px;
+      font-weight: 600;
+      color: #1D9E75;
+      border: 1px solid #1D9E75;
+      border-radius: 6px;
+      padding: 6px 12px;
+      text-decoration: none;
+    ">
       Subscribe free
-      <svg viewBox="0 0 24 24" aria-hidden="true">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none"
+           stroke="#1D9E75" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+           aria-hidden="true">
         <line x1="5" y1="12" x2="19" y2="12"/>
         <polyline points="12 5 19 12 12 19"/>
       </svg>
     </a>
-    <p class="st-fine">Takes 10 seconds. No vendor pitches. Unsubscribe any time.</p>
- <!-- </div>-->
+    <p style="font-size: 11px; color: #475569; margin: 8px 0 0;">
+      Takes 10 seconds. No vendor pitches. Unsubscribe any time.
+    </p>
+  </div>
+
+
 </div>
 
 <!-- ======old blog feed from Github ======-->
@@ -584,33 +627,47 @@ title: Ciber Cazadora
       <br>Not open to: unsolicited vendor pitches. 
     </p>
       </div>
-      <!---------------CONTACT LINKS--------------->
-      <div class="contact-links fade-up">
-        <!--Linktree  -->
-         <a href="https://linktr.ee/priscilla.lopez" class="contact-link" target="_blank" rel="noopener">
-          <div class="link-label">Webpage & Booking Page</div>
-          <div class="link-value">https://linktr.ee/priscilla.lopez</div>
-        </div>
-        </a>
-         <!--Linkedin  -->
-        <a href="https://linkedin.com/in/p-g-lopez" class="contact-link" target="_blank" rel="noopener">
-            <div class="link-label">LinkedIn</div>
-            <div class="link-value">linkedin.com/in/p-g-lopez</div>
-          </a>
-        <!--Linked Badge  -->
-            <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript">
-            </script>
-            <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="medium" data-theme="dark" data-type="VERTICAL" data-vanity="p-g-lopez" data-version="v1">
-              <a class="badge-base__link LI-simple-link" href="https://www.linkedin.com/in/p-g-lopez?trk=profile-badge">Priscilla Lopez
-              </a>   
-          </div>
-        <!--Substack -->
-        <a href="https://securitytranslated.substack.com/subscribe" class="contact-link" target="_blank" rel="noopener">
-          <div>
-            <div class="link-label">Substack</div>
-            <div class="link-value">Subscribe to Security Translated</div>
-          </div>
-        </a>
+ <!---------------CONTACT LINKS--------------->
+<div class="contact-links fade-up">
+ 
+  <!-- Linktree -->
+  <a href="https://linktr.ee/priscilla.lopez" class="contact-link" target="_blank" rel="noopener">
+    <div class="link-label">Webpage &amp; Booking Page</div>
+    <div class="link-value">linktr.ee/priscilla.lopez</div>
+  </a>
+ 
+  <!-- LinkedIn -->
+  <a href="https://linkedin.com/in/p-g-lopez" class="contact-link" target="_blank" rel="noopener">
+    <div class="link-label">LinkedIn</div>
+    <div class="link-value">linkedin.com/in/p-g-lopez</div>
+  </a>
+ 
+  <!-- Substack -->
+  <a href="https://securitytranslated.substack.com/subscribe" class="contact-link" target="_blank" rel="noopener">
+    <div class="link-label">Newsletter</div>
+    <div class="link-value">Subscribe to Security Translated</div>
+  </a>
+ 
+</div>
+ 
+<!--
+  LinkedIn badge removed from the contact links grid —
+  it renders as a third-party iframe widget and breaks the card layout.
+  If you want it on the page, paste the block below somewhere outside
+  the contact-links div, like after the section or in the footer.
+ 
+  <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+  <div class="badge-base LI-profile-badge"
+       data-locale="en_US"
+       data-size="medium"
+       data-theme="dark"
+       data-type="VERTICAL"
+       data-vanity="p-g-lopez"
+       data-version="v1">
+    <a class="badge-base__link LI-simple-link"
+       href="https://www.linkedin.com/in/p-g-lopez?trk=profile-badge">Priscilla Lopez</a>
+  </div>
+-->
   
          <!--  <a href="mailto:" class="contact-link">
           <div>
