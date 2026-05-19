@@ -2,7 +2,7 @@ name: Fetch Substack Posts
 
 on:
   schedule:
-    - cron: "0 */6 * * *" # Run every 6 hours
+    - cron: "0 0 5 31 2" # Don't run until push to portfolio fixed
   workflow_dispatch:
   push:
     branches: [main]
@@ -18,7 +18,7 @@ jobs:
         with:
           feed_url: 'https://example.com/rss'
           file_path: './data/feed.json'
-          
+
       - name: Fetch and parse feed
         run: |
           curl -s https://securitytranslated.substack.com/feed | \
