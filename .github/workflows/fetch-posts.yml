@@ -5,7 +5,7 @@ on:
     branches:
       - main
   schedule:
-    - cron: "0 */365 * * *"
+    - cron: 
 jobs:
   fetch:
     runs-on: ubuntu-latest
