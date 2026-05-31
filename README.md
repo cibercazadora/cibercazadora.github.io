@@ -19,17 +19,6 @@ bundle exec jekyll serve
 
 Then visit `http://localhost:4000`
 
-## What to Customize
-
-### Must-do (marked with TODO or placeholder text):
-
-- **index.html** - Replace placeholder stats (X+, X) with real numbers
-- **index.html** - Update About section with your actual background
-- **index.html** - Replace experience timeline with real job history
-- **index.html** - Add real project descriptions and results
-- **index.html** - Update certifications with your actual certs (link to Credly)
-- **index.html** - Update contact links (LinkedIn, email, GitHub)
-- **_config.yml** - Update description if needed
 
 ### Blog Posts
 
