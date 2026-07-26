@@ -12,6 +12,74 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Playfair+Display:wght@600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  <!--
+  Paste inside <head> in _layouts/default.html, above the closing </head>.
+  This is the fix for LinkedIn shares rendering as a bare link.
+  Replace the og:image path once you have a share image (1200x630 px).
+-->
+
+<title>{% if page.title %}{{ page.title }}{% else %}Priscilla Lopez — Director of Information Security{% endif %}</title>
+<meta name="description" content="{% if page.description %}{{ page.description }}{% else %}I build security programs from zero that pass audits and earn trust. CISSP, GCPN, USAF veteran. Phoenix, Arizona.{% endif %}">
+<link rel="canonical" href="https://priscillalopez.com{{ page.url }}">
+
+<!-- Open Graph: LinkedIn, Slack, Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Priscilla Lopez">
+<meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}Priscilla Lopez — Director of Information Security{% endif %}">
+<meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}I build security programs from zero that pass audits and earn trust. Nine domains, zero major findings. CISSP, GCPN, USAF veteran.{% endif %}">
+<meta property="og:url" content="https://priscillalopez.com{{ page.url }}">
+<meta property="og:image" content="https://priscillalopez.com/assets/images/og-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Priscilla Lopez, Director of Information Security">
+
+<!-- Twitter / X -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Priscilla Lopez — Director of Information Security">
+<meta name="twitter:description" content="I build security programs from zero that pass audits and earn trust. CISSP, GCPN, USAF veteran.">
+<meta name="twitter:image" content="https://priscillalopez.com/assets/images/og-card.png">
+
+<!-- Structured data: helps Google show you as a person, not a page -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Priscilla Lopez",
+  "alternateName": "Ciber Cazadora",
+  "jobTitle": "Director of Information Security",
+  "email": "mailto:plopez@priscillalopez.com",
+  "url": "https://priscillalopez.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Phoenix",
+    "addressRegion": "AZ",
+    "addressCountry": "US"
+  },
+  "sameAs": [
+    "https://linkedin.com/in/p-g-lopez",
+    "https://github.com/cibercazadora",
+    "https://securitytranslated.substack.com",
+    "https://securitytranslated.co"
+  ],
+  "knowsAbout": [
+    "Information Security",
+    "Governance Risk and Compliance",
+    "SOC 2",
+    "NIST 800-171",
+    "CMMC",
+    "Identity and Access Management",
+    "Detection Engineering"
+  ],
+  "hasCredential": [
+    { "@type": "EducationalOccupationalCredential", "name": "CISSP" },
+    { "@type": "EducationalOccupationalCredential", "name": "GCPN" },
+    { "@type": "EducationalOccupationalCredential", "name": "CEH" },
+    { "@type": "EducationalOccupationalCredential", "name": "CHFI" },
+    { "@type": "EducationalOccupationalCredential", "name": "GFACT" },
+    { "@type": "EducationalOccupationalCredential", "name": "CompTIA Network+" }
+  ]
+}
+</script>
   </head>
 <body>
   {% include nav.html %}
