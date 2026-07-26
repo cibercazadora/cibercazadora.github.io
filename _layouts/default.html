@@ -3,91 +3,89 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ page.title | default: site.title }}</title>
-  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg" />
- <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon.svg" />
- <link rel="apple-touch-icon" href="/assets/images/favicon.svg" />
-  <meta name="description" content="{{ page.description | default: site.description }}">
+
+  <!-- Title & description: ONE of each. Values come from page front matter,
+       falling back to _config.yml, falling back to a hardcoded default. -->
+  <title>{{ page.title | default: site.title | default: "Priscilla Lopez — Director of Information Security" }}</title>
+  <meta name="description" content="{{ page.description | default: site.description | default: 'I build security programs from zero that pass audits and earn trust. CISSP, GCPN, USAF veteran. Phoenix, Arizona.' }}">
+  <link rel="canonical" href="https://priscillalopez.com{{ page.url }}">
+
+  <!-- Icons -->
+  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
+  <link rel="apple-touch-icon" href="/assets/images/favicon.svg">
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Playfair+Display:wght@600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
-  <!--
-  Paste inside <head> in _layouts/default.html, above the closing </head>.
-  This is the fix for LinkedIn shares rendering as a bare link.
-  Replace the og:image path once you have a share image (1200x630 px).
--->
 
-<title>{% if page.title %}{{ page.title }}{% else %}Priscilla Lopez — Director of Information Security{% endif %}</title>
-<meta name="description" content="{% if page.description %}{{ page.description }}{% else %}I build security programs from zero that pass audits and earn trust. CISSP, GCPN, USAF veteran. Phoenix, Arizona.{% endif %}">
-<link rel="canonical" href="https://priscillalopez.com{{ page.url }}">
+  <!-- Open Graph: LinkedIn, Slack, Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Priscilla Lopez">
+  <meta property="og:title" content="{{ page.title | default: site.title }}">
+  <meta property="og:description" content="{{ page.description | default: site.description }}">
+  <meta property="og:url" content="https://priscillalopez.com{{ page.url }}">
+  <meta property="og:image" content="https://priscillalopez.com/assets/images/og-card.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Priscilla Lopez, Director of Information Security">
 
-<!-- Open Graph: LinkedIn, Slack, Facebook -->
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Priscilla Lopez">
-<meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}Priscilla Lopez — Director of Information Security{% endif %}">
-<meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}I build security programs from zero that pass audits and earn trust. Nine domains, zero major findings. CISSP, GCPN, USAF veteran.{% endif %}">
-<meta property="og:url" content="https://priscillalopez.com{{ page.url }}">
-<meta property="og:image" content="https://priscillalopez.com/assets/images/og-card.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Priscilla Lopez, Director of Information Security">
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ page.title | default: site.title }}">
+  <meta name="twitter:description" content="{{ page.description | default: site.description }}">
+  <meta name="twitter:image" content="https://priscillalopez.com/assets/images/og-card.png">
 
-<!-- Twitter / X -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Priscilla Lopez — Director of Information Security">
-<meta name="twitter:description" content="I build security programs from zero that pass audits and earn trust. CISSP, GCPN, USAF veteran.">
-<meta name="twitter:image" content="https://priscillalopez.com/assets/images/og-card.png">
-
-<!-- Structured data: helps Google show you as a person, not a page -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Priscilla Lopez",
-  "alternateName": "Ciber Cazadora",
-  "jobTitle": "Director of Information Security",
-  "email": "mailto:plopez@priscillalopez.com",
-  "url": "https://priscillalopez.com",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Phoenix",
-    "addressRegion": "AZ",
-    "addressCountry": "US"
-  },
-  "sameAs": [
-    "https://linkedin.com/in/p-g-lopez",
-    "https://github.com/cibercazadora",
-    "https://securitytranslated.substack.com",
-    "https://securitytranslated.co"
-  ],
-  "knowsAbout": [
-    "Information Security",
-    "Governance Risk and Compliance",
-    "SOC 2",
-    "NIST 800-171",
-    "CMMC",
-    "Identity and Access Management",
-    "Detection Engineering"
-  ],
-  "hasCredential": [
-    { "@type": "EducationalOccupationalCredential", "name": "CISSP" },
-    { "@type": "EducationalOccupationalCredential", "name": "GCPN" },
-    { "@type": "EducationalOccupationalCredential", "name": "CEH" },
-    { "@type": "EducationalOccupationalCredential", "name": "CHFI" },
-    { "@type": "EducationalOccupationalCredential", "name": "GFACT" },
-    { "@type": "EducationalOccupationalCredential", "name": "CompTIA Network+" }
-  ]
-}
-</script>
-  </head>
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Priscilla Lopez",
+    "alternateName": "Ciber Cazadora",
+    "jobTitle": "Director of Information Security",
+    "email": "mailto:plopez@priscillalopez.com",
+    "url": "https://priscillalopez.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Phoenix",
+      "addressRegion": "AZ",
+      "addressCountry": "US"
+    },
+    "sameAs": [
+      "https://linkedin.com/in/p-g-lopez",
+      "https://github.com/cibercazadora",
+      "https://securitytranslated.substack.com",
+      "https://securitytranslated.co"
+    ],
+    "knowsAbout": [
+      "Information Security",
+      "Governance Risk and Compliance",
+      "SOC 2",
+      "NIST 800-171",
+      "CMMC",
+      "Identity and Access Management",
+      "Detection Engineering"
+    ]
+  }
+  </script>
+</head>
 <body>
   {% include nav.html %}
   <main>
     {{ content }}
   </main>
   {% include footer.html %}
+
   <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+
+  <!-- NOTE: your existing substack-feed.js is loaded here. The index.html I sent
+       also has an inline feed script. Keep ONE of them, not both, or they'll
+       fight over the same container. If you keep this file, delete the
+       <script> block at the bottom of index.html. -->
   <script src="{{ '/assets/js/substack-feed.js' | relative_url }}"></script>
 </body>
 </html>
