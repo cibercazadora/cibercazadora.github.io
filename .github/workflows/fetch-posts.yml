@@ -5,7 +5,7 @@ on:
     branches:
       - main
   schedule:
-    - cron: 
+    - cron: '0 13 * * 2'   # Tuesdays 13:00 UTC
 jobs:
   fetch:
     runs-on: ubuntu-latest
@@ -18,7 +18,7 @@ jobs:
         run: pip install requests --quiet
 
       - name: Run update script
-        run: python update-posts.py
+        run: python scripts/fetch-posts.py
 
       - name: Commit posts.json
         run: |
