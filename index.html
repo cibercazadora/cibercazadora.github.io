@@ -1,68 +1,707 @@
-<!--
-  Paste inside <head> in _layouts/default.html, above the closing </head>.
-  This is the fix for LinkedIn shares rendering as a bare link.
-  Replace the og:image path once you have a share image (1200x630 px).
--->
+---
+layout: default
+title: Priscilla Lopez — Director of Information Security
+description: I build security programs from zero that pass audits and earn trust. Nine domains, SOC 2 Type II, HIPAA, NIST 800-171, zero major findings. CISSP, GCPN, USAF veteran. Phoenix, Arizona.
+---
 
-<title>{% if page.title %}{{ page.title }}{% else %}Priscilla Lopez — Director of Information Security{% endif %}</title>
-<meta name="description" content="{% if page.description %}{{ page.description }}{% else %}I build security programs from zero that pass audits and earn trust. CISSP, GCPN, USAF veteran. Phoenix, Arizona.{% endif %}">
-<link rel="canonical" href="https://priscillalopez.com{{ page.url }}">
+<!-- ====== HERO ====== -->
+<section class="hero" id="home">
+  <div class="container">
+    <div class="hero-content fade-up">
+      <span class="hero-label">Security Leader · USAF Veteran · CISSP &amp; GCPN</span>
+      <h1>I don't inherit security programs<br>I <em>build</em> them</h1>
+      <h2>Then I translate them for the people who pay for them.</h2>
+      <p class="hero-description">
+        Director of Information Security at an MDR provider running 24/7 SOC operations worldwide.
+        Nine security domains, built from zero, with a lean team through 174% company growth.
+        SOC 2 Type II, HIPAA, and NIST 800-171 with zero major findings.
+        <br><br>
+        Founder of Security Translated: the newsletter for the people who build security
+        and the people who fund it.
+      </p>
+      <div class="hero-image">
+        <img src="/assets/images/profile.png" alt="Priscilla Lopez">
+      </div>
+      <div class="hero-cta">
+        <a href="#positioning" class="btn btn-primary">Start here →</a>
+        <a href="#security-translated" class="btn btn-secondary">Read Security Translated</a>
+        <a href="#projects" class="btn btn-secondary">See my work</a>
+        <a href="#contact" class="btn btn-secondary">Get in touch</a>
+      </div>
+    </div>
+  </div>
+</section>
 
-<!-- Open Graph: LinkedIn, Slack, Facebook -->
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Priscilla Lopez">
-<meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}Priscilla Lopez — Director of Information Security{% endif %}">
-<meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}I build security programs from zero that pass audits and earn trust. Nine domains, zero major findings. CISSP, GCPN, USAF veteran.{% endif %}">
-<meta property="og:url" content="https://priscillalopez.com{{ page.url }}">
-<meta property="og:image" content="https://priscillalopez.com/assets/images/og-card.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Priscilla Lopez, Director of Information Security">
+<hr class="section-divider">
 
-<!-- Twitter / X -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Priscilla Lopez — Director of Information Security">
-<meta name="twitter:description" content="I build security programs from zero that pass audits and earn trust. CISSP, GCPN, USAF veteran.">
-<meta name="twitter:image" content="https://priscillalopez.com/assets/images/og-card.png">
+<!-- ====== POSITIONING ====== -->
+<section id="positioning">
+  <div class="container">
+    <span class="section-label">Straight answers</span>
+    <h2 class="section-title">Before you read further.</h2>
 
-<!-- Structured data: helps Google show you as a person, not a page -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Priscilla Lopez",
-  "alternateName": "Ciber Cazadora",
-  "jobTitle": "Director of Information Security",
-  "email": "mailto:plopez@priscillalopez.com",
-  "url": "https://priscillalopez.com",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Phoenix",
-    "addressRegion": "AZ",
-    "addressCountry": "US"
-  },
-  "sameAs": [
-    "https://linkedin.com/in/p-g-lopez",
-    "https://github.com/cibercazadora",
-    "https://securitytranslated.substack.com",
-    "https://securitytranslated.co"
-  ],
-  "knowsAbout": [
-    "Information Security",
-    "Governance Risk and Compliance",
-    "SOC 2",
-    "NIST 800-171",
-    "CMMC",
-    "Identity and Access Management",
-    "Detection Engineering"
-  ],
-  "hasCredential": [
-    { "@type": "EducationalOccupationalCredential", "name": "CISSP" },
-    { "@type": "EducationalOccupationalCredential", "name": "GCPN" },
-    { "@type": "EducationalOccupationalCredential", "name": "CEH" },
-    { "@type": "EducationalOccupationalCredential", "name": "CHFI" },
-    { "@type": "EducationalOccupationalCredential", "name": "GFACT" },
-    { "@type": "EducationalOccupationalCredential", "name": "CompTIA Network+" }
-  ]
-}
-</script>
+    <div class="pos-grid stagger-children">
+
+      <div class="pos fade-up">
+        <h3>Who I am</h3>
+        <p>
+          A security leader who builds programs from zero and won't build them any way but right.
+          Nearly two decades across the Air Force, three university classrooms, my own consultancy,
+          and now an MDR provider. <strong>Budget conversations and bash terminals, same day.</strong>
+        </p>
+      </div>
+
+      <div class="pos not fade-up">
+        <h3>Who I'm not</h3>
+        <p>
+          Not a vendor. Not a consultant selling you a maturity model you'll never staff. Not a GRC
+          director who can't open a terminal, and not a pentester who can't write an executive
+          summary. <strong>I don't do security theater, and I won't sell you shelfware.</strong>
+        </p>
+      </div>
+
+      <div class="pos fade-up">
+        <h3>What I bring</h3>
+        <p>
+          <strong>Nine security domains built from zero.</strong> SOC 2 Type II, HIPAA, and NIST
+          800-171 with zero major findings. CMMC Level 2 to 95% on first assessment. A lean team
+          through 174% growth with minimal consultant support. Audit pass rate 82% to 100%. 96% of
+          standing privileged access eliminated. 37 policies written, not inherited.
+        </p>
+      </div>
+
+      <div class="pos not fade-up">
+        <h3>Why that's different</h3>
+        <p>
+          Most security leaders inherit a program and patch it. I've built from zero as the only
+          security person in the room, with no senior to escalate to. Then I taught it for a decade,
+          which is why <strong>I can explain it to an executive, an engineer, and an auditor in the
+          same afternoon.</strong>
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- ====== ABOUT ====== -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-text fade-up">
+        <span class="section-label">About</span>
+        <h2 class="section-title">Why 'Ciber Cazadora' and why Security Translated.</h2>
+
+        <p>
+          It started with a Commodore 64. I didn't play games on it. I took it apart, figured out
+          how it worked, and put it back together. That instinct never left.
+        </p>
+        <p>
+          Six years in the Air Force taught me to lead when the situation is unclear. A decade
+          teaching cybersecurity at three universities taught me to make risk make sense for any
+          audience. Running my own consultancy in Hawai'i taught me that every engagement is
+          personal when your name is on the door.
+        </p>
+        <p>
+          Today I'm Director of Information Security at Lumifi Cyber, where I built the program
+          from zero. The numbers are above; the part that matters is that none of it existed
+          before, and it holds up under audit.
+        </p>
+        <p>
+          The handle "Ciber Cazadora" means cyber huntress. I don't wait for threats to find me.
+        </p>
+        <p>
+          Security done right gives companies permission to grow. A mature program isn't overhead,
+          it's a competitive advantage. Built right. Passed clean. People first.
+        </p>
+        <p>
+          Security Translated is the other side of that. After years of turning risk into budget
+          language, then going back to the terminal to actually fix things, I started writing it
+          down. Most security content serves one audience. Mine serves two.
+        </p>
+        <p>
+          I mentor through WiCyS and (ISC)². I still play on TryHackMe, Hack The Box, and CTFs.
+          When I'm not doing either, I'm baking or binging Netflix with the family.
+        </p>
+      </div>
+
+      <!-- Stats -->
+      <div class="about-stats stagger-children">
+        <div class="stat fade-up">
+          <div class="stat-number">0</div>
+          <div class="stat-label">Major findings across SOC 2 Type II, HIPAA, NIST 800-171</div>
+        </div>
+        <div class="stat fade-up">
+          <div class="stat-number">9</div>
+          <div class="stat-label">Security domains built from zero</div>
+        </div>
+        <div class="stat fade-up">
+          <div class="stat-number">95%</div>
+          <div class="stat-label">CMMC Level 2 alignment on first assessment</div>
+        </div>
+        <div class="stat fade-up">
+          <div class="stat-number">6 yrs</div>
+          <div class="stat-label">USAF, Secret clearance, zero safety or compliance failures</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- ====== WRITING ====== -->
+<section id="security-translated">
+  <div class="container">
+    <span class="section-label">Writing</span>
+    <h2 class="section-title">Security Translated.</h2>
+    <p class="section-subtitle">
+      Every issue does two jobs: a framework the people funding security will understand, and
+      something the people building it can actually ship. No vendor pitches. No rehashed press
+      releases.
+    </p>
+    <p class="section-subtitle">
+      Twelve pillars: translating cyber to the executive, GRC, GRC engineering, AI in security,
+      DevSecOps, container and cloud-native security, penetration testing and red teaming, code
+      review and application security, vulnerability management, security architecture and
+      strategy, incident response and threat detection, and security operations and team building.
+    </p>
+
+    <!-- Substack RSS feed -->
+    <div id="substack-posts">
+      <div class="blog-grid stagger-children"></div>
+    </div>
+
+    <p>
+      Free to subscribe. Read it on
+      <a href="https://securitytranslated.substack.com" target="_blank" rel="noopener">Substack</a>.
+    </p>
+
+    <!-- Lead magnet callout. Uses the .st-callout classes from the stylesheet. -->
+    <div class="st-callout">
+      <div class="st-icon-wrap" aria-hidden="true">
+        <svg viewBox="0 0 24 24">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+          <polyline points="14 2 14 8 20 8"/>
+          <line x1="16" y1="13" x2="8" y2="13"/>
+          <line x1="16" y1="17" x2="8" y2="17"/>
+        </svg>
+      </div>
+      <div class="st-body">
+        <p class="st-eyebrow">Free for subscribers · Security Translated</p>
+        <p class="st-title">Get the Executive Briefing Template</p>
+        <p class="st-desc">
+          The one-pager I use to turn a security risk into a five-minute executive update.
+          Threat data into budget language: no buzzwords, no slide bloat.
+        </p>
+        <a class="st-cta" href="https://securitytranslated.substack.com/subscribe" target="_blank" rel="noopener">
+          Subscribe free
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <line x1="5" y1="12" x2="19" y2="12"/>
+            <polyline points="12 5 19 12 12 19"/>
+          </svg>
+        </a>
+        <p class="st-fine">Takes 10 seconds. No vendor pitches. Unsubscribe any time.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- ====== SPEAKING & PUBLICATIONS ====== -->
+<section id="speaking">
+  <div class="container">
+    <span class="section-label">Speaking &amp; publications</span>
+    <h2 class="section-title">Publishing this since 2013.</h2>
+    <p class="section-subtitle">
+      The newsletter is the current form, not the start.
+    </p>
+
+    <div class="blog-grid stagger-children">
+
+      <a class="blog-card fade-up" href="https://youtu.be/qXWcfOwLaio" target="_blank" rel="noopener">
+        <span class="blog-date">2025 · Interview</span>
+        <h3>A Day in the Life: Cybersecurity</h3>
+        <p>CyberJitsu. What the work actually looks like, minus the keynote gloss.</p>
+        <span class="read-more">Watch</span>
+      </a>
+
+      <div class="blog-card fade-up">
+        <span class="blog-date">2024 &amp; 2025 · Speaking</span>
+        <h3>MSP / Customer Security Summit</h3>
+        <p>Compliance panel in 2024. CMMC compliance talk in 2025. Two years running.</p>
+      </div>
+
+      <div class="blog-card fade-up">
+        <span class="blog-date">2025 · Presentation</span>
+        <h3>Enterprise Cyber Resilience Strategy</h3>
+        <p>Presented to a peer cohort of security leaders, (ISC)&sup2; Cyber Leadership Program.</p>
+      </div>
+
+      <a class="blog-card fade-up" href="https://www.lumificyber.com/knowledge-center/webinars/incident-response-plan/" target="_blank" rel="noopener">
+        <span class="blog-date">2023 · Webinar</span>
+        <h3>Creating an Effective Incident Response Plan</h3>
+        <p>The plan people actually run, not the one that sits in a binder.</p>
+        <span class="read-more">Watch</span>
+      </a>
+
+      <a class="blog-card fade-up" href="https://eforensicsmag.com" target="_blank" rel="noopener">
+        <span class="blog-date">2013 · Published</span>
+        <h3>Steganography: The Art of Hidden Data in Plain Sight</h3>
+        <p>Feature article, eForensics Magazine.</p>
+        <span class="read-more">eForensics Magazine</span>
+      </a>
+
+      <a class="blog-card fade-up" href="https://eforensicsmag.com" target="_blank" rel="noopener">
+        <span class="blog-date">2013 · Published</span>
+        <h3>12 Open-Source Linux Forensic Tools</h3>
+        <p>Feature article, eForensics Magazine.</p>
+        <span class="read-more">eForensics Magazine</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- ====== SKILLS & CERTS ====== -->
+<section id="skills">
+  <div class="container">
+    <span class="section-label">Capabilities</span>
+    <h2 class="section-title">What I bring.</h2>
+    <p class="section-subtitle">
+      Not a list of technologies I've touched. These are the tools I've used to close audit
+      findings, cut standing privileged access, and defend production.
+    </p>
+    <div class="skills-grid stagger-children">
+
+      <div class="skill-card fade-up">
+        <h3>Identity &amp; Access Management</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">Entra ID</span>
+          <span class="skill-tag">SAML</span>
+          <span class="skill-tag">OIDC</span>
+          <span class="skill-tag">SCIM</span>
+          <span class="skill-tag">SSO</span>
+          <span class="skill-tag">MFA</span>
+          <span class="skill-tag">PAM</span>
+          <span class="skill-tag">RBAC</span>
+          <span class="skill-tag">JIT Provisioning</span>
+          <span class="skill-tag">Identity Lifecycle</span>
+          <span class="skill-tag">Least Privilege</span>
+        </div>
+      </div>
+
+      <div class="skill-card fade-up">
+        <h3>Security Operations</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">Microsoft Sentinel</span>
+          <span class="skill-tag">Defender XDR</span>
+          <span class="skill-tag">EDR</span>
+          <span class="skill-tag">DLP</span>
+          <span class="skill-tag">Microsoft Purview</span>
+          <span class="skill-tag">KQL</span>
+          <span class="skill-tag">Incident Response</span>
+          <span class="skill-tag">Vuln Management (Tenable)</span>
+        </div>
+      </div>
+
+      <div class="skill-card fade-up">
+        <h3>Compliance &amp; Frameworks</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">SOC 2 Type II</span>
+          <span class="skill-tag">NIST 800-171</span>
+          <span class="skill-tag">HIPAA</span>
+          <span class="skill-tag">CMMC Level 2</span>
+          <span class="skill-tag">GDPR</span>
+          <span class="skill-tag">FERPA</span>
+          <span class="skill-tag">COPPA</span>
+          <span class="skill-tag">CIS Controls</span>
+        </div>
+      </div>
+
+      <div class="skill-card fade-up">
+        <h3>Device &amp; Endpoint Security</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">Microsoft Intune</span>
+          <span class="skill-tag">Jamf Pro</span>
+          <span class="skill-tag">Sophos</span>
+          <span class="skill-tag">Conditional Access</span>
+          <span class="skill-tag">Device Posture</span>
+        </div>
+      </div>
+
+      <div class="skill-card fade-up">
+        <h3>Zero Trust &amp; Network Security</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">Cloudflare</span>
+          <span class="skill-tag">Tailscale</span>
+          <span class="skill-tag">ZTNA</span>
+          <span class="skill-tag">Firewalls</span>
+        </div>
+      </div>
+
+      <div class="skill-card fade-up">
+        <h3>Cloud Platforms</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">Microsoft Azure</span>
+          <span class="skill-tag">AWS</span>
+          <span class="skill-tag">Microsoft 365</span>
+          <span class="skill-tag">Google Workspace</span>
+        </div>
+      </div>
+
+      <div class="skill-card fade-up">
+        <h3>Scripting &amp; Automation</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">Bash</span>
+          <span class="skill-tag">PowerShell</span>
+          <span class="skill-tag">CI/CD</span>
+        </div>
+      </div>
+
+      <div class="skill-card fade-up">
+        <h3>Penetration Testing</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">Kali Linux</span>
+          <span class="skill-tag">Metasploit</span>
+          <span class="skill-tag">Burp Suite</span>
+          <span class="skill-tag">Nmap</span>
+          <span class="skill-tag">Nessus</span>
+          <span class="skill-tag">OWASP ZAP</span>
+          <span class="skill-tag">Wireshark</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Certifications. TODO: replace each href with its Credly badge URL. -->
+    <div class="certs-row fade-up">
+      <a href="https://www.linkedin.com/in/p-g-lopez/details/certifications/" class="cert-badge" target="_blank" rel="noopener">
+        <span class="cert-icon"></span> CISSP
+      </a>
+      <a href="https://www.linkedin.com/in/p-g-lopez/details/certifications/" class="cert-badge" target="_blank" rel="noopener">
+        <span class="cert-icon"></span> GCPN
+      </a>
+      <a href="https://www.linkedin.com/in/p-g-lopez/details/certifications/" class="cert-badge" target="_blank" rel="noopener">
+        <span class="cert-icon"></span> GFACT
+      </a>
+      <a href="https://www.linkedin.com/in/p-g-lopez/details/certifications/" class="cert-badge" target="_blank" rel="noopener">
+        <span class="cert-icon"></span> CHFI
+      </a>
+      <a href="https://www.linkedin.com/in/p-g-lopez/details/certifications/" class="cert-badge" target="_blank" rel="noopener">
+        <span class="cert-icon"></span> CEH
+      </a>
+      <a href="https://www.linkedin.com/in/p-g-lopez/details/certifications/" class="cert-badge" target="_blank" rel="noopener">
+        <span class="cert-icon"></span> CompTIA Network+
+      </a>
+    </div>
+
+    <!-- Education -->
+    <div class="certs-row fade-up">
+      <span class="cert-badge">
+        <span class="cert-icon"></span> M.S. Information Security &amp; Assurance · Western Governors University
+      </span>
+      <span class="cert-badge">
+        <span class="cert-icon"></span> B.S. Computer &amp; Information Technology · University of Maryland
+      </span>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- ====== PROJECTS ====== -->
+<section id="projects">
+  <div class="container">
+    <span class="section-label">Projects</span>
+    <h2 class="section-title">What I've built.</h2>
+    <p class="section-subtitle">Proof of work. Not slide decks.</p>
+
+    <div class="projects-grid stagger-children">
+
+      <div class="project-card fade-up">
+        <div class="project-card-body">
+          <span class="project-type">AI Security</span>
+          <h3>Agentic LLM Threat Model &amp; Security Architecture</h3>
+          <p>
+            Threat model covering 23 attack vectors across 4 layers. Mitigations for all 10 OWASP
+            LLM risks. MCP security layer with identity propagation, context isolation, and tiered
+            sandboxing. Circuit breakers and scoped execution tokens for the agentic loop.
+          </p>
+          <div class="project-tags">
+            <span>Threat Modeling</span>
+            <span>OWASP LLM Top 10</span>
+            <span>MCP</span>
+            <span>Agentic AI</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/cibercazadora/llm-security-lab" class="project-link" target="_blank" rel="noopener">
+              <svg><use href="#icon-github"/></svg>
+              GitHub repo
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card fade-up">
+        <div class="project-card-body">
+          <span class="project-type">Identity Engineering</span>
+          <h3>Identity Lifecycle &amp; Access Automation</h3>
+          <p>
+            JML automation with Python and Microsoft Graph. Okta and OIDC federation lab in Gitea.
+            Conditional access and device posture policies in Entra ID and Intune. Automated access
+            reviews via Graph API.
+          </p>
+          <div class="project-tags">
+            <span>Python</span>
+            <span>Microsoft Graph</span>
+            <span>Okta</span>
+            <span>Entra ID</span>
+            <span>Intune</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/cibercazadora/jml-identity-automation" class="project-link" target="_blank" rel="noopener">
+              <svg><use href="#icon-github"/></svg>
+              JML automation
+            </a>
+            <a href="https://github.com/cibercazadora/okta-gitea-oidc-lab" class="project-link" target="_blank" rel="noopener">
+              <svg><use href="#icon-github"/></svg>
+              OIDC federation lab
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card fade-up">
+        <div class="project-card-body">
+          <span class="project-type">Compliance Automation</span>
+          <h3>Continuous Compliance Pipeline</h3>
+          <p>
+            Automated evidence collection from cloud, IdP, CI/CD, and runtime, mapped directly to
+            control frameworks. No more screenshot-driven audits.
+          </p>
+          <div class="project-tags">
+            <span>CI/CD</span>
+            <span>Cloud</span>
+            <span>IdP</span>
+            <span>Evidence Automation</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/cibercazadora/continuous-compliance-pipeline" class="project-link" target="_blank" rel="noopener">
+              <svg><use href="#icon-github"/></svg>
+              GitHub repo
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- In-progress work, kept separate so finished work reads as finished -->
+    <span class="section-label" style="margin-top:2.5rem; display:block;">Currently building</span>
+    <div class="projects-grid stagger-children">
+
+      <div class="project-card fade-up">
+        <div class="project-card-body">
+          <span class="project-type">AI Governance</span>
+          <h3>NIST AI RMF &amp; Prompt Injection Defenses</h3>
+          <p>
+            Full NIST AI RMF implementation: Govern, Map, Measure, Manage across 12 documented
+            activities. Prompt injection defenses using canary tokens, instruction hierarchy, and
+            dual-LLM sanitization. Human-in-the-loop guardrails with fail-closed timeouts.
+          </p>
+          <div class="project-tags">
+            <span>NIST AI RMF</span>
+            <span>Prompt Injection</span>
+            <span>Guardrails</span>
+            <span>HITL</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card fade-up">
+        <div class="project-card-body">
+          <span class="project-type">Zero Trust</span>
+          <h3>Tailscale ZTNA Home Network Lab</h3>
+          <p>
+            Zero trust network access using Tailscale. Identity-based access control, no VPNs, no
+            exposed ports.
+          </p>
+          <div class="project-tags">
+            <span>Tailscale</span>
+            <span>ZTNA</span>
+            <span>Network Segmentation</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- ====== EXPERIENCE ====== -->
+<section id="experience">
+  <div class="container">
+    <span class="section-label">Experience</span>
+    <h2 class="section-title">Where I've been.</h2>
+    <p class="section-subtitle">
+      I've been the only security person in the room. I've also been the one explaining the risk
+      to leadership while the team builds. Selected roles below: the military years and the last
+      decade. Earlier work was in other fields.
+    </p>
+    <p>
+      <a href="https://raw.githubusercontent.com/cibercazadora/cibercazadora.github.io/main/Priscilla_Lopez_Resume.pdf"
+         class="btn btn-secondary" style="margin-top: 0.5rem;">Download resume (PDF)</a>
+    </p>
+
+    <div class="timeline">
+
+      <div class="timeline-item fade-up">
+        <div class="timeline-date">April 2024 &ndash; Present</div>
+        <h3>Director of Information Security</h3>
+        <div class="company">Lumifi Cyber · Scottsdale, AZ</div>
+        <p>
+          Built the security program from zero across nine domains: GRC, vulnerability management,
+          IAM, endpoint security, product security, infrastructure security, third-party risk,
+          incident response, and disaster recovery. SOC 2 Type II, HIPAA, and NIST 800-171 with
+          zero major findings. Drove CMMC Level 2 to 95% alignment on first assessment after a
+          mid-cycle revision, with minimal consultant support. Led a lean team through 174% company
+          growth while developing a junior hire. Audit pass rate went from 82% to 100%. Eliminated
+          96% of standing privileged access. Zero data breaches in three years. Built the Trust
+          Center answering 100+ client security questionnaires a year.
+        </p>
+      </div>
+
+      <div class="timeline-item fade-up">
+        <div class="timeline-date">April 2023 &ndash; April 2024</div>
+        <h3>Senior IT Security Engineer</h3>
+        <div class="company">Lumifi Cyber</div>
+        <p>
+          Walked into a security program that existed on paper but barely held up under scrutiny.
+          Rebuilt vulnerability management, risk operations, and compliance readiness into workflows
+          that survived the first SOC 2 Type II and NIST 800-171 audits with zero major findings.
+          Authored 37 framework-mapped policies. Embedded SAST and DAST into CI/CD and cut critical
+          production vulnerabilities by 38%. Promoted to Director in under a year, skipping Manager.
+        </p>
+      </div>
+
+      <div class="timeline-item fade-up">
+        <div class="timeline-date">2013 &ndash; 2023, concurrent</div>
+        <h3>Adjunct Professor &amp; Lecturer</h3>
+        <div class="company">UH Maui College · Liberty University · Excelsior College</div>
+        <p>
+          Taught cybersecurity, digital forensics, ethical hacking, Python, and networking across
+          three universities for ten concurrent years, alongside full-time work. Designed hands-on
+          labs with AWS Workspaces, VMware, and SEED Labs. Earned the 2015 Instructor Excellence
+          Award at Liberty University and led NSF grant-funded cybersecurity cohorts at the
+          University of Hawai'i. This decade is why I explain risk differently than most leaders in
+          this field.
+        </p>
+      </div>
+
+      <div class="timeline-item fade-up">
+        <div class="timeline-date">2018 &ndash; 2023</div>
+        <h3>Computer Systems Engineer</h3>
+        <div class="company">Hawaii Preparatory Academy</div>
+        <p>
+          Sole IT owner for a K-12 campus of 600 students and 150 staff: infrastructure, security,
+          endpoints, budget, vendors, compliance, and automation. Completed a school-wide LMS and
+          SIS rollout in six months against a twelve-month industry average. Led GDPR readiness in
+          2018 for an international parent community. Cut malware incidents in half, raised phishing
+          reporting 60%, and secured roughly $50K in infrastructure grant funding. Compliance across
+          PCI, GDPR, COPPA, CIPA, and HIPAA.
+        </p>
+      </div>
+
+      <div class="timeline-item fade-up">
+        <div class="timeline-date">2013 &ndash; 2018</div>
+        <h3>Founding Owner &amp; Lead Technologist</h3>
+        <div class="company">Lana'i Computers LLC</div>
+        <p>
+          Founded and ran a solo IT and security consultancy for five years. Delivered seven
+          external and web application penetration tests for healthcare, legal, and retail clients
+          using Nessus, Kali Linux, and Burp Suite. Designed a HIPAA-compliant Windows Server and
+          Office 365 environment for a nonprofit healthcare organization. Scoping, delivery,
+          reporting, and running the business: all of it mine.
+        </p>
+      </div>
+
+      <div class="timeline-item fade-up">
+        <div class="timeline-date">2000 &ndash; 2006</div>
+        <h3>Staff Sergeant (E-5), Munitions Systems Specialist</h3>
+        <div class="company">U.S. Air Force, Active Duty</div>
+        <p>
+          Six years active duty with a Secret clearance. Directed 30+ munitions operations involving
+          missile systems valued at $100K+, with zero safety or compliance failures. Received audit
+          commendations for documentation accuracy and operational excellence. Managed scheduling
+          and mission readiness for a shop of 10+ personnel. Two Air Force Achievement Medals with
+          Oak Leaf Cluster, an Outstanding Unit Award, a Humanitarian Service Medal, and a National
+          Defense Service Medal. The accountability standard here is the one I still run security
+          programs by.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- ====== CONTACT ====== -->
+<section id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-text fade-up">
+        <span class="section-label">Let's build something.</span>
+        <h2 class="section-title">I'd rather build with you than talk at you.</h2>
+        <p>
+          Phoenix, Arizona.
+          <br><br>
+          <strong>Open to:</strong> security leadership roles, advisory work, and speaking.
+          <br><strong>Building:</strong> Security Translated — newsletter, templates, and
+          practitioner toolkits.
+          <br><strong>Not open to:</strong> unsolicited vendor pitches.
+        </p>
+      </div>
+
+      <div class="contact-links fade-up">
+
+        <a href="mailto:plopez@priscillalopez.com" class="contact-link">
+          <div>
+            <div class="link-label">Email</div>
+            <div class="link-value">plopez@priscillalopez.com</div>
+          </div>
+        </a>
+
+        <a href="https://linkedin.com/in/p-g-lopez" class="contact-link" target="_blank" rel="noopener">
+          <div>
+            <div class="link-label">LinkedIn</div>
+            <div class="link-value">linkedin.com/in/p-g-lopez</div>
+          </div>
+        </a>
+
+        <a href="https://securitytranslated.substack.com/subscribe" class="contact-link" target="_blank" rel="noopener">
+          <div>
+            <div class="link-label">Newsletter</div>
+            <div class="link-value">Subscribe to Security Translated</div>
+          </div>
+        </a>
+
+        <a href="https://linktr.ee/priscilla.lopez" class="contact-link" target="_blank" rel="noopener">
+          <div>
+            <div class="link-label">Booking &amp; speaker sheet</div>
+            <div class="link-value">linktr.ee/priscilla.lopez</div>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </div>
+</section>
