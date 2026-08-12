@@ -9,7 +9,8 @@ description: I build security programs from zero that pass audits and earn trust
   <div class="container">
     <div class="hero-content fade-up">
       <span class="hero-label">Security Leader · USAF Veteran · CISSP &amp; GCPN</span>
-      <h1>I don't inherit security programs<br>I <em>build</em> them</h1>
+      <h1><br>I <em>build</em> security programs</h1> 
+      <h2>from scratch with lean teams, pass audits quickly, and personally defend the work to clients.</h2>
       <h2>Then I translate them for the people who pay for them.</h2>
       <p class="hero-description">
         Director of Information Security at an MDR provider running 24/7 SOC operations worldwide.
@@ -106,8 +107,8 @@ description: I build security programs from zero that pass audits and earn trust
         </p>
         <p>
           Today I'm Director of Information Security at Lumifi Cyber, where I built the program
-          from zero. The numbers are above; the part that matters is that none of it existed
-          before, and it holds up under audit.
+          from bare bones. The numbers are above; the part that matters is that none of it existed
+          before, and it held up under audit.
         </p>
         <p>
           The handle "Ciber Cazadora" means cyber huntress. I proactively look for security gaps caused by people, in poor processes, and found in technology. 
@@ -123,7 +124,7 @@ description: I build security programs from zero that pass audits and earn trust
         </p>
         <p>
           I mentor through WiCyS. I work on projects in my home lab, help my husband with his business, participate in CTFs, or sharpen my skills in HTB or THM. 
-          When I need a break from technology, I'm baking, painting, drawing, maintaining my health, or binge Netflix with the family.
+          When I need a break from technology, I'm baking, painting, drawing, maintaining my health, or binging Netflix with the family.
         </p>
       </div>
 
@@ -178,6 +179,39 @@ description: I build security programs from zero that pass audits and earn trust
       Free to subscribe. Read it on
       <a href="https://securitytranslated.substack.com" target="_blank" rel="noopener">Substack</a>.
     </p>
+<script>
+      <!-- Lead magnet callout. Uses the .st-callout classes from the stylesheet. -->
+
+  // Replace with your actual Substack RSS feed URL
+  const rssUrl = 'https://securitytranslated.substack.com/feed'; 
+  // Convert RSS to JSON to read it with JavaScript
+  const apiGrid = `https://rss2json.com{encodeURIComponent(rssUrl)}`;
+
+  fetch(apiGrid)
+    .then(response => response.json())
+    .then(data => {
+      if (data.status === 'ok') {
+        let html = '<ul>';
+        // Displays the 5 most recent posts
+        data.items.slice(0, 5).forEach(item => {
+          const pubDate = new Date(item.pubDate).toLocaleDateString();
+          html += `<li>
+            <a href="${item.link}" target="_blank" rel="noopener noreferrer"><strong>${item.title}</strong></a> 
+            <small>(${pubDate})</small>
+          </li>`;
+        });
+        html += '</ul>';
+        document.getElementById('substack-posts').innerHTML = html;
+      } else {
+        document.getElementById('substack-posts').innerHTML = 'Failed to load posts.';
+      }
+    })
+    .catch(() => {
+      document.getElementById('substack-posts').innerHTML = 'Error loading posts.';
+    });
+</script>
+
+
 
     <!-- Lead magnet callout. Uses the .st-callout classes from the stylesheet. -->
     <div class="st-callout">
